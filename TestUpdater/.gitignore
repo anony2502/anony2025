@@ -1,0 +1,8 @@
+/utils/multilspy/language_servers/*/static/
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+backup/
+logs/

@@ -1,0 +1,195 @@
+﻿Klaw Core,io.aiven.klaw.controller,UiConfigController,26,15,0,0,4,3,3,2,3,2
+Klaw Core,io.aiven.klaw.helpers.db.rdbms,SelectDataJdbc,3951,468,416,56,838,122,385,25,154,20
+Klaw Core,io.aiven.klaw.service,AnalyticsControllerService,142,1476,29,71,42,339,28,62,1,39
+Klaw Core,io.aiven.klaw.service,AnalyticsControllerService,142,1476,29,71,42,339,28,62,1,39
+Klaw Core,io.aiven.klaw.controller,TopicController,79,124,1,1,16,22,8,12,7,12
+Klaw Core,io.aiven.klaw.service,ClusterApiService,1662,880,66,28,415,224,62,19,18,16
+Klaw Core,io.aiven.klaw.service,ClusterApiService,1662,880,66,28,415,224,62,19,18,16
+Klaw Core,io.aiven.klaw.auth,KwAuthenticationSuccessHandler,34,62,6,12,10,19,6,7,1,3
+Klaw Core,io.aiven.klaw.auth,KwAuthenticationSuccessHandler,34,62,6,12,10,19,6,7,1,3
+Klaw Core,io.aiven.klaw.service,UsersTeamsControllerService,2082,514,225,33,511,132,159,27,39,18
+Klaw Core,io.aiven.klaw.service,TopicSyncControllerService,1159,1795,138,130,277,422,106,78,13,37
+Klaw Core,io.aiven.klaw.service,UsersTeamsControllerService,2258,539,212,32,555,138,152,27,39,18
+Klaw Core,io.aiven.klaw.service,ServerConfigService,311,977,46,78,86,248,50,56,9,35
+Klaw Core,io.aiven.klaw.service,UsersTeamsControllerService,2258,539,212,32,555,136,152,27,39,18
+Klaw Core,io.aiven.klaw.service,TopicOverviewService,89,434,13,25,23,107,11,17,0,9
+Klaw Core,io.aiven.klaw.service,TopicOverviewService,89,434,13,25,23,107,11,17,0,9
+Klaw Core,io.aiven.klaw.service,TopicOverviewService,89,434,13,25,23,107,11,17,0,9
+Klaw Core,io.aiven.klaw.service,TopicOverviewService,95,427,13,25,24,105,12,16,1,8
+Klaw Core,io.aiven.klaw.service,TopicOverviewService,95,427,13,25,24,105,12,16,1,8
+Klaw Core,io.aiven.klaw.service,ClusterApiService,1146,763,40,14,278,194,39,15,13,14
+Klaw Core,io.aiven.klaw.service,ServerConfigService,304,953,49,75,78,251,52,53,9,34
+Klaw Core,io.aiven.klaw.service,ServerConfigService,304,953,49,75,78,251,52,53,9,34
+Klaw Core,io.aiven.klaw.controller,TopicController,60,122,0,0,11,21,6,12,6,12
+Klaw Core,io.aiven.klaw.controller,AclController,29,102,0,0,5,15,3,10,3,10
+Klaw Core,io.aiven.klaw.controller,AclController,29,101,0,0,5,15,3,10,3,10
+Klaw Core,io.aiven.klaw.controller,AclController,29,100,0,0,5,15,3,10,3,10
+Klaw Core,io.aiven.klaw.service,AclControllerService,190,1486,42,103,41,359,40,64,1,30
+Klaw Core,io.aiven.klaw.service,TopicControllerService,268,2469,63,129,62,626,58,103,3,62
+Klaw Core,io.aiven.klaw.service,TopicControllerService,268,2469,63,129,62,626,58,103,3,62
+Klaw Core,io.aiven.klaw.controller,AclController,29,98,0,0,5,15,3,10,3,10
+Klaw Core,io.aiven.klaw.service,TopicControllerService,268,2469,63,129,62,626,58,103,3,62
+Klaw Core,io.aiven.klaw.service,ClusterApiService,1056,763,40,14,258,194,38,15,12,14
+Klaw Core,io.aiven.klaw.service,TopicControllerService,270,2451,63,129,62,621,58,103,3,62
+Klaw Core,io.aiven.klaw.helpers.db.rdbms,DeleteDataJdbc,415,272,10,8,90,62,29,10,21,9
+Klaw Core,io.aiven.klaw.service,TopicControllerService,270,2417,62,128,62,613,57,103,3,62
+Klaw Core,io.aiven.klaw.controller,TopicController,59,115,0,0,11,21,6,12,6,12
+Klaw Core,io.aiven.klaw.helpers.db.rdbms,DeleteDataJdbc,423,253,9,7,91,60,28,10,21,9
+Klaw Core,io.aiven.klaw.service,AclControllerService,183,1477,39,104,40,355,39,64,1,30
+Klaw Core,io.aiven.klaw.service,AclControllerService,183,1477,39,104,40,355,39,64,1,30
+Klaw Core,io.aiven.klaw.helpers.db.rdbms,DeleteDataJdbc,435,230,9,5,93,57,28,9,21,9
+Klaw Core,io.aiven.klaw.service,RequestStatisticsService,0,210,0,4,0,56,0,8,0,6
+Klaw Core,io.aiven.klaw.service,TopicControllerService,264,2420,61,129,60,614,56,104,3,62
+Klaw Core,io.aiven.klaw.controller,TopicController,59,113,0,0,11,21,6,12,6,12
+Klaw Core,io.aiven.klaw.service,TopicControllerService,264,2420,61,129,60,614,56,104,3,62
+Klaw Core,io.aiven.klaw.service,AclControllerService,177,1455,37,102,38,351,37,63,1,29
+Klaw Core,io.aiven.klaw.service,AclControllerService,177,1455,37,102,38,351,37,63,1,29
+Klaw Core,io.aiven.klaw.controller,AclController,29,90,0,0,5,15,3,10,3,10
+Klaw Core,io.aiven.klaw.service,TopicControllerService,261,2394,60,128,60,613,55,104,3,62
+Klaw Core,io.aiven.klaw.service,TopicControllerService,261,2394,60,128,60,613,55,104,3,62
+Klaw Core,io.aiven.klaw.service,TopicControllerService,261,2394,60,128,60,613,55,104,3,62
+openapi-generator (core library),org.openapitools.codegen.languages,AbstractJavaCodegen,3066,3476,475,281,650,632,399,142,85,78
+openapi-generator (core library),org.openapitools.codegen.languages,AbstractKotlinCodegen,815,2020,128,134,170,333,110,95,24,48
+openapi-generator (core library),org.openapitools.codegen.languages,AbstractJavaCodegen,2657,3326,415,263,582,598,365,128,83,71
+openapi-generator (core library),org.openapitools.codegen.languages,AbstractKotlinCodegen,703,2035,108,130,144,332,97,93,21,48
+openapi-generator (core library),org.openapitools.codegen.languages,AbstractRustCodegen,57,681,14,71,15,92,18,54,6,23
+nacos-client 2.5.1-SNAPSHOT,com.alibaba.nacos.client.naming,NacosNamingService,16,923,9,43,5,210,9,90,0,73
+nacos-client 2.5.1-SNAPSHOT,com.alibaba.nacos.client.naming,NacosNamingService,16,923,9,43,5,210,9,90,0,73
+nacos-client 2.5.1-SNAPSHOT,com.alibaba.nacos.client.naming.cache,ServiceInfoHolder,0,277,4,22,0,63,4,22,0,13
+nacos-client 2.5.1-SNAPSHOT,com.alibaba.nacos.client.naming,NacosNamingService,16,926,9,43,5,210,9,90,0,73
+nacos-config 2.5.0,com.alibaba.nacos.config.server.remote,ConfigQueryRequestHandler,19,275,3,18,5,56,3,14,0,6
+nacos-naming 2.5.0-BETA,com.alibaba.nacos.naming.core.v2.metadata,NamingMetadataManager,53,272,11,15,8,71,11,23,1,20
+nacos-config 2.5.0-SNAPSHOT,com.alibaba.nacos.config.server.service.repository.embedded,EmbeddedConfigInfoGrayPersistServiceImpl,113,1226,27,25,11,165,24,18,0,16
+nacos-datasource-plugin 2.5.0-SNAPSHOT,com.alibaba.nacos.plugin.datasource.impl.derby,HistoryConfigInfoMapperByDerby,43,59,0,0,4,10,1,4,1,4
+nacos-core 2.5.0-SNAPSHOT,com.alibaba.nacos.core.service,NamespaceOperationService,29,153,3,7,3,33,3,8,0,6
+nacos-datasource-plugin 2.5.0-SNAPSHOT,com.alibaba.nacos.plugin.datasource.impl.derby,HistoryConfigInfoMapperByDerby,43,53,0,0,4,9,1,4,1,4
+nacos-datasource-plugin 2.4.0-SNAPSHOT,com.alibaba.nacos.plugin.datasource.impl.mysql,ConfigInfoMapperByMySql,115,663,19,23,22,110,19,17,0,15
+nacos-api 2.4.0-SNAPSHOT,com.alibaba.nacos.api.remote.response,ErrorResponse,0,46,0,4,0,13,0,5,0,3
+nacos-api 2.4.0-SNAPSHOT,com.alibaba.nacos.api.remote.response,ErrorResponse,0,46,0,4,0,13,0,5,0,3
+nacos-naming 2.3.1-SNAPSHOT,com.alibaba.nacos.naming.push.v2.hook,NacosMonitorPushResultHook,13,54,4,6,2,15,4,5,0,4
+nacos-datasource-plugin 2.3.1-SNAPSHOT,com.alibaba.nacos.plugin.datasource.impl.mysql,ConfigInfoMapperByMySql,115,637,18,18,22,109,18,15,0,15
+nacos-default-auth-plugin 2.3.1-SNAPSHOT,com.alibaba.nacos.plugin.auth.impl.token.impl,JwtTokenManager,27,126,4,6,7,34,7,11,3,10
+nacos-client 2.3.0-BETA,com.alibaba.nacos.client.config.filter.impl,ConfigEncryptionFilter,40,115,19,17,7,27,18,6,2,4
+nacos-common 2.3.0-SNAPSHOT,com.alibaba.nacos.common.executor,ThreadPoolManager,0,202,0,14,0,56,0,25,0,18
+nacos-plugin-default-impl 2.3.0-SNAPSHOT,com.alibaba.nacos.plugin.auth.impl.persistence,EmbeddedPermissionPersistServiceImpl,102,110,10,2,25,23,8,4,2,4
+nacos-plugin-default-impl 2.3.0-SNAPSHOT,com.alibaba.nacos.plugin.auth.impl.persistence,EmbeddedRolePersistServiceImpl,100,200,13,3,22,41,10,7,2,7
+nacos-console 2.3.0-SNAPSHOT,com.alibaba.nacos.console.controller,NamespaceController,0,82,0,10,0,19,0,12,0,7
+nacos-console 2.3.0-SNAPSHOT,com.alibaba.nacos.console.controller.v2,NamespaceControllerV2,29,75,3,3,3,20,3,6,0,6
+nacos-datasource-plugin 2.3.0-SNAPSHOT,com.alibaba.nacos.plugin.datasource.impl.mysql,ConfigInfoAggrMapperByMySql,0,63,0,0,0,10,0,3,0,3
+nacos-datasource-plugin 2.3.0-SNAPSHOT,com.alibaba.nacos.plugin.datasource.impl.derby,ConfigInfoBetaMapperByDerby,0,46,0,0,0,9,0,3,0,3
+nacos-datasource-plugin 2.2.1-SNAPSHOT,com.alibaba.nacos.plugin.datasource.impl.derby,ConfigInfoBetaMapperByDerby,0,46,0,0,0,9,0,3,0,3
+nacos-datasource-plugin 2.2.1-SNAPSHOT,com.alibaba.nacos.plugin.datasource.impl.mysql,ConfigInfoAggrMapperByMySql,0,65,0,0,0,10,0,3,0,3
+nacos-datasource-plugin 2.2.1-SNAPSHOT,com.alibaba.nacos.plugin.datasource.impl.mysql,ConfigInfoAggrMapperByMySql,0,65,0,0,0,10,0,3,0,3
+nacos-client 2.2.1-SNAPSHOT,com.alibaba.nacos.client.naming.remote.gprc.redo,NamingGrpcRedoService,6,480,10,20,1,115,11,25,1,20
+nacos-datasource-plugin 2.2.1-RC,com.alibaba.nacos.plugin.datasource.impl.mysql,ConfigInfoMapperByMySql,92,357,17,17,14,55,17,15,0,15
+nacos-datasource-plugin 2.2.0,com.alibaba.nacos.plugin.datasource.impl.mysql,ConfigInfoAggrMapperByMySql,4,92,1,9,1,21,1,12,0,8
+rocketmq-broker 5.3.2-SNAPSHOT,org.apache.rocketmq.broker.client.net,Broker2Client,309,403,29,25,65,99,25,11,3,6
+rocketmq-broker 5.3.2-SNAPSHOT,org.apache.rocketmq.broker.processor,PeekMessageProcessor,254,582,36,36,46,117,30,15,2,7
+rocketmq-proxy 5.3.2-SNAPSHOT,org.apache.rocketmq.proxy.grpc.v2.route,RouteActivity,39,634,12,54,10,170,10,33,0,8
+rocketmq-tiered-store 5.2.1-SNAPSHOT,org.apache.rocketmq.tieredstore.file,FlatMessageFile,102,637,17,31,23,140,18,45,4,35
+rocketmq-client 5.1.5-SNAPSHOT,org.apache.rocketmq.client.rpchook,NamespaceRpcHook,1,22,0,2,1,7,1,3,1,2
+rocketmq-client 5.1.5-SNAPSHOT,org.apache.rocketmq.client.rpchook,NamespaceRpcHook,1,22,0,2,1,7,1,3,1,2
+rocketmq-common 5.1.5-SNAPSHOT,org.apache.rocketmq.common,UtilAll,1324,312,149,45,326,77,127,28,47,11
+rocketmq-common 5.1.4-SNAPSHOT,org.apache.rocketmq.common.utils,ConcurrentHashMapUtils,15,36,3,5,6,12,4,3,1,2
+rocketmq-proxy 5.1.4-SNAPSHOT,org.apache.rocketmq.proxy.grpc.v2.consumer,ReceiveMessageActivity,66,228,12,18,13,54,11,9,1,4
+rocketmq-proxy 5.1.4-SNAPSHOT,org.apache.rocketmq.proxy.grpc.v2.consumer,ReceiveMessageActivity,66,228,12,18,13,54,11,9,1,4
+rocketmq-proxy 5.1.2-SNAPSHOT,org.apache.rocketmq.proxy.grpc.v2.consumer,ChangeInvisibleDurationActivity,0,113,0,4,0,27,0,6,0,4
+rocketmq-proxy 5.1.2-SNAPSHOT,org.apache.rocketmq.proxy.grpc.v2.producer,ForwardMessageToDLQActivity,7,85,0,2,3,19,0,5,0,4
+rocketmq-proxy 5.1.2-SNAPSHOT,org.apache.rocketmq.proxy.grpc.v2.route,RouteActivity,19,590,11,50,9,160,9,31,0,8
+rocketmq-proxy 5.1.2-SNAPSHOT,org.apache.rocketmq.proxy.processor,ConsumerProcessor,446,527,13,20,110,115,20,22,8,17
+rocketmq-proxy 5.1.2-SNAPSHOT,org.apache.rocketmq.proxy.processor,ConsumerProcessor,446,527,13,20,110,115,20,22,8,17
+rocketmq-proxy 5.1.2-SNAPSHOT,org.apache.rocketmq.proxy.processor,ConsumerProcessor,446,527,13,20,110,115,20,22,8,17
+rocketmq-proxy 5.1.2-SNAPSHOT,org.apache.rocketmq.proxy.processor,ProducerProcessor,55,354,14,22,12,83,14,12,0,8
+rocketmq-proxy 5.1.2-SNAPSHOT,org.apache.rocketmq.proxy.processor,ProducerProcessor,55,354,14,22,12,83,14,12,0,8
+rocketmq-proxy 5.1.2-SNAPSHOT,org.apache.rocketmq.proxy.service.message,ClusterMessageService,248,31,2,0,53,7,18,3,17,3
+rocketmq-tools 5.0.1-SNAPSHOT,org.apache.rocketmq.tools.command.broker,BrokerStatusSubCommand,94,100,10,4,17,25,8,5,1,5
+shenyu-plugin-springcloud,org.apache.shenyu.plugin.springcloud.context,SpringCloudShenyuContextDecorator,0,43,0,0,0,9,0,3,0,3
+shenyu-admin,org.apache.shenyu.admin.service.register,AbstractShenyuClientRegisterServiceImpl,4,274,4,18,1,66,5,21,1,14
+shenyu-admin,org.apache.shenyu.admin.listener.etcd,EtcdClient,61,58,2,0,14,17,2,6,1,6
+shenyu-admin,org.apache.shenyu.admin.config,DataSyncConfiguration,3,0,0,0,1,0,1,0,1,0
+shenyu-admin,org.apache.shenyu.admin.config,ConsulServerConfiguration,10,34,2,2,2,7,2,3,0,3
+shenyu-plugin-dubbo-common,org.apache.shenyu.plugin.dubbo.common.handler,AbstractDubboPluginDataHandler,14,194,8,16,1,45,7,15,0,10
+shenyu-plugin-brpc,org.apache.shenyu.plugin.brpc.cache,ApplicationConfigCache,242,46,16,0,60,12,18,4,10,4
+shenyu-client-sofa,org.apache.shenyu.client.sofa,SofaServiceEventListener,171,245,17,11,35,58,12,15,3,10
+shenyu-common,org.apache.shenyu.common.dto.convert.rule,SentinelHandle,88,356,19,23,4,72,21,34,2,32
+shenyu-sync-data-zookeeper,org.apache.shenyu.sync.data.zookeeper,ZookeeperClient,20,319,6,22,4,75,5,24,0,15
+shenyu-admin,org.apache.shenyu.admin.shiro.config,ShiroRealm,19,100,4,10,4,27,3,9,1,4
+shenyu-register-instance-nacos,org.apache.shenyu.register.instance.nacos,NacosInstanceRegisterRepository,127,108,0,0,28,27,4,7,4,7
+shenyu-plugin-sentinel,org.apache.shenyu.plugin.sentinel,SentinelPlugin,21,70,9,3,3,14,7,6,1,6
+shenyu-plugin-base,org.apache.shenyu.plugin.base.utils,CacheKeyUtils,0,29,0,0,0,3,0,2,0,2
+shenyu-admin,org.apache.shenyu.admin.config,MapperConfig,3,0,0,0,1,0,1,0,1,0
+shenyu-plugin-ratelimiter,org.apache.shenyu.plugin.ratelimiter,RateLimiterPlugin,12,87,0,2,3,17,1,7,1,6
+shenyu-admin,org.apache.shenyu.admin.service.register,ShenyuClientRegisterSpringCloudServiceImpl,43,176,12,20,5,33,11,17,1,11
+shenyu-admin,org.apache.shenyu.admin.utils,ShaUtils,9,64,0,6,3,14,1,5,1,2
+shenyu-plugin-general-context,org.apache.shenyu.plugin.general.context,GeneralContextPlugin,7,99,5,6,3,22,6,7,1,6
+shenyu-plugin-context-path,org.apache.shenyu.plugin.context.path,ContextPathPlugin,63,129,10,8,9,23,9,7,0,7
+shenyu-admin,org.apache.shenyu.admin.service.impl,UpstreamCheckService,261,263,28,18,67,59,24,16,6,11
+shenyu-plugin-resilience4j,org.apache.shenyu.plugin.resilience4j.executor,RateLimiterExecutor,0,26,0,0,0,6,0,2,0,2
+shenyu-plugin-resilience4j,org.apache.shenyu.plugin.resilience4j.executor,RateLimiterExecutor,0,26,0,0,0,6,0,2,0,2
+shenyu-plugin-cryptor,org.apache.shenyu.plugin.cryptor.response,CryptorResponsePlugin,31,40,2,2,5,9,2,5,0,5
+shenyu-plugin-rewrite,org.apache.shenyu.plugin.rewrite,RewritePlugin,27,58,1,3,6,10,4,4,3,3
+shenyu-plugin-alibaba-dubbo,org.apache.shenyu.plugin.alibaba.dubbo,AlibabaDubboPlugin,38,158,11,13,5,27,12,8,2,6
+shenyu-plugin-alibaba-dubbo,org.apache.shenyu.plugin.alibaba.dubbo,AlibabaDubboPlugin,38,158,11,13,5,27,12,8,2,6
+shenyu-common,org.apache.shenyu.common.dto.convert.rule,RuleHandleFactory,26,50,0,0,6,10,1,2,1,2
+shenyu-common,org.apache.shenyu.common.dto.convert.rule.impl,ContextMappingHandle,63,27,9,1,6,11,7,7,2,7
+shenyu-common,org.apache.shenyu.common.dto.convert.rule.impl,ModifyResponseRuleHandle,110,117,21,1,9,30,13,20,2,20
+shenyu-plugin-apache-dubbo,org.apache.shenyu.plugin.apache.dubbo,ApacheDubboPlugin,66,116,9,15,9,22,11,10,2,7
+shenyu-admin,org.apache.shenyu.admin.config,DataBaseConfiguration,0,18,0,0,0,6,0,2,0,2
+shenyu-web,org.apache.shenyu.web.filter,CrossFilter,0,69,0,4,0,17,0,4,0,2
+shenyu-register-client-http,org.apache.shenyu.register.client.http.utils,RegisterUtils,6,19,1,1,1,5,1,2,0,2
+shenyu-plugin-jwt,org.apache.shenyu.plugin.jwt.handle,JwtPluginDataHandler,0,46,0,0,0,10,0,3,0,3
+shenyu-admin,org.apache.shenyu.admin.utils,AesUtils,3,28,1,7,1,6,2,5,1,2
+shenyu-plugin-grpc,org.apache.shenyu.plugin.grpc,GrpcPlugin,32,187,12,18,3,32,12,11,0,8
+shenyu-metrics-prometheus,org.apache.shenyu.metrics.prometheus.register,PrometheusMetricsRegister,64,109,12,8,17,26,11,8,3,6
+shenyu-metrics-prometheus,org.apache.shenyu.metrics.prometheus.service,PrometheusBootService,33,90,6,4,11,22,5,6,0,6
+shenyu-plugin-apache-dubbo,org.apache.shenyu.plugin.apache.dubbo.proxy,ApacheDubboProxyService,46,101,11,7,7,22,10,4,1,4
+shenyu-plugin-sentinel,org.apache.shenyu.plugin.sentinel.handler,SentinelRuleHandle,22,165,8,4,0,41,8,6,2,6
+soul-plugin-context-path,org.dromara.soul.plugin.contextpath,ContextPathMappingPlugin,14,97,5,7,2,21,5,8,0,7
+soul-plugin-context-path,org.dromara.soul.plugin.contextpath,ContextPathMappingPlugin,14,97,5,7,2,21,5,8,0,7
+soul-plugin-apache-dubbo,org.dromara.soul.plugin.apache.dubbo,ApacheDubboPlugin,52,117,11,17,7,21,13,10,2,7
+soul-plugin-apache-dubbo,org.dromara.soul.plugin.apache.dubbo,ApacheDubboPlugin,52,117,11,17,7,21,13,10,2,7
+soul-admin,org.dromara.soul.admin.listener.nacos,NacosDataChangedListener,41,754,7,28,1,179,8,49,3,34
+soul-plugin-sofa,org.dromara.soul.plugin.sofa.proxy,SofaProxyService,44,76,9,5,8,15,7,4,0,4
+soul-admin,org.dromara.soul.admin.page,PageResultUtils,3,38,1,3,1,6,2,2,1,1
+prebid-server,org.prebid.server.auction,SkippedAuctionService,0,176,0,16,0,42,0,16,0,8
+prebid-server,org.prebid.server.auction.privacy.enforcement,CoppaEnforcement,0,69,0,2,0,15,0,6,0,5
+prebid-server,org.prebid.server.bidder.ucfunnel,UcfunnelBidder,28,202,8,18,10,42,6,14,0,7
+prebid-server,org.prebid.server.bidder.adpone,AdponeBidder,0,112,0,4,0,32,0,8,0,6
+prebid-server,org.prebid.server.auction.privacy.enforcement.mask,UserFpdActivityMask,0,24,0,0,0,6,0,3,0,3
+prebid-server,org.prebid.server.auction.privacy.enforcement.mask,UserFpdActivityMask,0,24,0,0,0,6,0,3,0,3
+prebid-server,org.prebid.server.activity.infrastructure.privacy.usnat.reader,USNationalGppReader,0,121,0,2,0,22,0,21,0,20
+prebid-server,org.prebid.server.activity.infrastructure.privacy.uscustomlogic.reader,USConnecticutGppReader,0,101,0,2,0,22,0,21,0,20
+prebid-server,org.prebid.server.auction,PrivacyEnforcementService,25,1462,21,179,7,335,22,141,1,62
+prebid-server,org.prebid.server.auction,PrivacyEnforcementService,25,1462,21,179,7,335,22,141,1,62
+prebid-server,org.prebid.server.auction.mediatypeprocessor,CompositeMediaTypeProcessor,0,51,0,4,0,13,0,4,0,2
+prebid-server,org.prebid.server.auction.mediatypeprocessor,CompositeMediaTypeProcessor,0,51,0,4,0,13,0,4,0,2
+prebid-server,org.prebid.server.auction,TargetingKeywordsCreator,19,289,11,39,2,60,10,25,0,10
+prebid-server,org.prebid.server.auction,TargetingKeywordsCreator,19,289,11,39,2,60,10,25,0,10
+prebid-server,org.prebid.server.auction,TargetingKeywordsCreator,19,289,11,39,2,60,10,25,0,10
+prebid-server,org.prebid.server.auction,TargetingKeywordsCreator,19,289,11,39,2,60,10,25,0,10
+prebid-server,org.prebid.server.auction,TargetingKeywordsCreator,19,289,11,39,2,60,10,25,0,10
+prebid-server,org.prebid.server.util,VersionInfo,90,84,21,5,1,20,14,8,3,6
+prebid-server,org.prebid.server.util,VersionInfo,90,84,21,5,1,20,14,8,3,6
+prebid-server,org.prebid.server.util,VersionInfo,90,84,21,5,1,20,14,8,3,6
+prebid-server,org.prebid.server.auction,ImplicitParametersExtractor,9,152,1,19,1,33,2,17,1,8
+prebid-server,org.prebid.server.auction,ImplicitParametersExtractor,9,152,1,19,1,33,2,17,1,8
+prebid-server,org.prebid.server.auction,PrivacyEnforcementService,25,1426,21,173,7,325,22,138,1,62
+prebid-server,org.prebid.server.deals.simulation,SimulationAwareHttpBidderRequester,1,310,1,21,0,66,1,25,0,15
+acme4j Client,org.shredzone.acme4j,Session,62,270,4,10,14,61,8,28,5,24
+acme4j Client,org.shredzone.acme4j,Order,5,280,1,1,1,80,1,23,0,23
+acme4j Client,org.shredzone.acme4j,OrderBuilder,10,316,7,25,1,72,8,25,1,16
+acme4j Client,org.shredzone.acme4j,Order,5,269,1,1,1,81,1,21,0,21
+acme4j Client,org.shredzone.acme4j.exception,AcmeRateLimitedException,0,22,0,2,0,7,0,4,0,3
+acme4j Client,org.shredzone.acme4j,Authorization,7,132,0,0,1,33,1,12,1,12
+acme4j Client,org.shredzone.acme4j,Authorization,7,132,0,0,1,33,1,12,1,12
+acme4j Client,org.shredzone.acme4j,AccountBuilder,20,191,3,13,3,45,5,16,2,11
+acme4j Client,org.shredzone.acme4j,AccountBuilder,20,191,3,13,3,45,5,16,2,11
+acme4j Client,org.shredzone.acme4j,Authorization,7,132,0,0,1,33,1,12,1,12
+acme4j Client,org.shredzone.acme4j,Authorization,7,132,0,0,1,33,1,12,1,12
+acme4j Client,org.shredzone.acme4j,AccountBuilder,20,191,3,13,3,45,5,16,2,11
+acme4j Client,org.shredzone.acme4j,OrderBuilder,10,316,7,25,1,72,8,25,1,16
+acme4j Client,org.shredzone.acme4j.exception,AcmeRateLimitedException,0,22,0,2,0,7,0,4,0,3
+acme4j Client,org.shredzone.acme4j.challenge,Challenge,6,114,3,5,1,24,3,12,0,11
+acme4j Client,org.shredzone.acme4j,Problem,19,163,0,10,4,42,1,17,1,12
+acme4j Client,org.shredzone.acme4j,AccountBuilder,20,190,4,14,4,45,5,16,1,11
+acme4j Client,org.shredzone.acme4j.connector,NetworkSettings,0,51,0,8,0,15,0,11,0,7

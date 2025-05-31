@@ -1,0 +1,10 @@
+alibaba/nacos
+apache/dolphinscheduler
+apache/druid
+apache/dubbo
+apache/rocketmq
+apache/shenyu
+javaparser/javaparser
+jenkinsci/jenkins
+OpenAPITools/openapi-generator
+quarkusio/quarkus

@@ -1,0 +1,44 @@
+{
+  "klaw": {
+    "owner": "Aiven-Open",
+    "number_of_tests": 50,
+    "file_name": "verified_Aiven-Open_klaw.json",
+    "repo_name": "Aiven-Open/klaw"
+  },
+  "acme4j": {
+    "owner": "shred",
+    "number_of_tests": 18,
+    "file_name": "verified_shred_acme4j.json",
+    "repo_name": "shred/acme4j"
+  },
+  "nacos": {
+    "owner": "alibaba",
+    "number_of_tests": 30,
+    "file_name": "verified_alibaba_nacos.json",
+    "repo_name": "alibaba/nacos"
+  },
+  "openapi-generator": {
+    "owner": "OpenAPITools",
+    "number_of_tests": 5,
+    "file_name": "verified_OpenAPITools_openapi-generator.json",
+    "repo_name": "OpenAPITools/openapi-generator"
+  },
+  "rocketmq": {
+    "owner": "apache",
+    "number_of_tests": 20,
+    "file_name": "verified_apache_rocketmq.json",
+    "repo_name": "apache/rocketmq"
+  },
+  "shenyu": {
+    "owner": "apache",
+    "number_of_tests": 48,
+    "file_name": "verified_apache_shenyu.json",
+    "repo_name": "apache/shenyu"
+  },
+  "prebid-server-java": {
+    "owner": "prebid",
+    "number_of_tests": 24,
+    "file_name": "verified_prebid_prebid-server-java.json",
+    "repo_name": "prebid/prebid-server-java"
+  }
+}

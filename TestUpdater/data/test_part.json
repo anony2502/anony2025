@@ -1,0 +1,19 @@
+[
+  {
+    "repo_name": "Aiven-Open/klaw",
+    "commit_date": "2023-02-14 11:13:38+00:00",
+    "commit_src": "4f5187e3796f1c66846582dea09d71fcae407822",
+    "commit_tgt": "0f5599f424887afca35ac5ede9715fd55e89514b",
+    "changed_test": "core/src/test/java/io/aiven/klaw/service/TopicControllerServiceTest.java#deleteTopicRequests",
+    "changed_prod": "core/src/main/java/io/aiven/klaw/service/TopicControllerService.java#deleteTopicRequests",
+    "test_code_src": "  @Test\n  @Order(22)\n  public void deleteTopicRequests() throws KlawException {\n    when(handleDbRequests.deleteTopicRequest(anyInt(), anyInt()))\n        .thenReturn(ApiResultStatus.SUCCESS.value);\n    when(commonUtilsService.isNotAuthorizedUser(any(), any())).thenReturn(false);\n    ApiResponse resultResp = topicControllerService.deleteTopicRequests(\"1001\");\n    assertThat(resultResp.getResult()).isEqualTo(ApiResultStatus.SUCCESS.value);\n  }",
+    "test_code_tgt": "  @Test\n  @Order(22)\n  public void deleteTopicRequests() throws KlawException {\n    when(handleDbRequests.deleteTopicRequest(anyInt(), anyString(), anyInt()))\n        .thenReturn(ApiResultStatus.SUCCESS.value);\n    when(mailService.getUserName(any())).thenReturn(\"uiuser1\");\n    when(commonUtilsService.isNotAuthorizedUser(any(), any())).thenReturn(false);\n    ApiResponse resultResp = topicControllerService.deleteTopicRequests(\"1001\");\n    assertThat(resultResp.getResult()).isEqualTo(ApiResultStatus.SUCCESS.value);\n  }",
+    "prod_code_src": "  public ApiResponse deleteTopicRequests(String topicId) throws KlawException {\n    log.info(\"deleteTopicRequests {}\", topicId);\n\n    if (commonUtilsService.isNotAuthorizedUser(\n        getPrincipal(), PermissionType.REQUEST_CREATE_TOPICS)) {\n      return ApiResponse.builder().result(ApiResultStatus.NOT_AUTHORIZED.value).build();\n    }\n    try {\n      String deleteTopicReqStatus =\n          manageDatabase\n              .getHandleDbRequests()\n              .deleteTopicRequest(\n                  Integer.parseInt(topicId), commonUtilsService.getTenantId(getUserName()));\n\n      return ApiResponse.builder().result(deleteTopicReqStatus).build();\n    } catch (Exception e) {\n      log.error(e.getMessage());\n      throw new KlawException(e.getMessage());\n    }\n  }",
+    "prod_code_tgt": "  public ApiResponse deleteTopicRequests(String topicId) throws KlawException {\n    log.info(\"deleteTopicRequests {}\", topicId);\n\n    if (commonUtilsService.isNotAuthorizedUser(\n        getPrincipal(), PermissionType.REQUEST_CREATE_TOPICS)) {\n      return ApiResponse.builder().result(ApiResultStatus.NOT_AUTHORIZED.value).build();\n    }\n    String userName = getUserName();\n    try {\n      String deleteTopicReqStatus =\n          manageDatabase\n              .getHandleDbRequests()\n              .deleteTopicRequest(\n                  Integer.parseInt(topicId),\n                  userName,\n                  commonUtilsService.getTenantId(getUserName()));\n\n      return ApiResponse.builder().result(deleteTopicReqStatus).build();\n    } catch (Exception e) {\n      log.error(e.getMessage());\n      throw new KlawException(e.getMessage());\n    }\n  }",
+    "test_id": 34,
+    "src_java_version": "17",
+    "src_maven_version": "3.8.1",
+    "tgt_java_version": "17",
+    "tgt_maven_version": "3.8.1"
+}
+]
