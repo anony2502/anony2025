@@ -1,0 +1,3604 @@
+[
+  {
+    "name": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolderTest.testGetFailoverServiceInfo()",
+    "bSource": {
+      "startLine": 204,
+      "code": "@Test\n    void testGetFailoverServiceInfo() throws IllegalAccessException, NoSuchFieldException, NacosException {\n        FailoverReactor mock = injectMockFailoverReactor();\n        ServiceInfo serviceInfo = new ServiceInfo(\"a@@b@@c\");\n        when(mock.getService(\"a@@b@@c\")).thenReturn(serviceInfo);\n        assertEquals(serviceInfo, holder.getFailoverServiceInfo(\"b\", \"a\", \"c\"));\n    }"
+    },
+    "aSource": {
+      "startLine": 203,
+      "code": "@Test\n    void testGetFailoverServiceInfo() throws IllegalAccessException, NoSuchFieldException, NacosException {\n        FailoverReactor mock = injectMockFailoverReactor();\n        ServiceInfo serviceInfo = new ServiceInfo(\"a@@b@@c\");\n        when(mock.getService(\"a@@b\")).thenReturn(serviceInfo);\n        assertEquals(serviceInfo, holder.getFailoverServiceInfo(\"b\", \"a\"));\n    }"
+    },
+    "bPath": "client/src/test/java/com/alibaba/nacos/client/naming/cache/ServiceInfoHolderTest.java",
+    "aPath": "client/src/test/java/com/alibaba/nacos/client/naming/cache/ServiceInfoHolderTest.java",
+    "bCommit": "f257fca5f",
+    "aCommit": "fa79474de",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "when(mock.getService(\"a@@b@@c\")).thenReturn(serviceInfo);",
+          "type": "DELETE",
+          "lineNo": 208
+        },
+        {
+          "line": "assertEquals(serviceInfo, holder.getFailoverServiceInfo(\"b\", \"a\", \"c\"));",
+          "type": "DELETE",
+          "lineNo": 209
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "when(mock.getService(\"a@@b\")).thenReturn(serviceInfo);",
+          "type": "ADD",
+          "lineNo": 207
+        },
+        {
+          "line": "assertEquals(serviceInfo, holder.getFailoverServiceInfo(\"b\", \"a\"));",
+          "type": "ADD",
+          "lineNo": 208
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "thenReturn(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "when(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "when(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.client.naming.backups.FailoverReactor.getService(String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.client.naming.backups.FailoverReactor mock"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.client.naming.backups.FailoverReactor.getService(String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'a@@b@@c'"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "thenReturn(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.api.naming.pojo.ServiceInfo serviceInfo"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(com.alibaba.nacos.api.naming.pojo.ServiceInfo,com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(com.alibaba.nacos.api.naming.pojo.ServiceInfo,com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.api.naming.pojo.ServiceInfo serviceInfo"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder.getFailoverServiceInfo(String,String,String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder holder"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder.getFailoverServiceInfo(String,String,String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'b'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'a'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'c'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "thenReturn(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "when(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "when(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.client.naming.backups.FailoverReactor.getService(String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.client.naming.backups.FailoverReactor mock"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.client.naming.backups.FailoverReactor.getService(String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'a@@b'"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "thenReturn(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.api.naming.pojo.ServiceInfo serviceInfo"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(com.alibaba.nacos.api.naming.pojo.ServiceInfo,com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(com.alibaba.nacos.api.naming.pojo.ServiceInfo,com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.api.naming.pojo.ServiceInfo serviceInfo"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder.getFailoverServiceInfo(String,String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder holder"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder.getFailoverServiceInfo(String,String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'b'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'a'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Literal",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\"a@@b@@c\"",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "\"a@@b\"",
+          "childCount": 0
+        }
+      },
+      {
+        "type": "Delete",
+        "nodeType": "Literal",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\"c\"",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        208
+      ]
+    },
+    "aCommitTime": 1740973373,
+    "ID": "alibaba/nacos:19",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.client.naming.NacosNamingServiceTest.testGetAllInstanceWithCacheAndSubscribed()",
+    "bSource": {
+      "startLine": 566,
+      "code": "@Test\n    void testGetAllInstanceWithCacheAndSubscribed() throws NacosException {\n        String serviceName = \"service1\";\n        ServiceInfo serviceInfo = new ServiceInfo();\n        serviceInfo.setName(serviceName);\n        serviceInfo.addHost(new Instance());\n        when(serviceInfoHolder.getServiceInfo(serviceName, Constants.DEFAULT_GROUP, \"\")).thenReturn(serviceInfo);\n        when(proxy.isSubscribed(serviceName, Constants.DEFAULT_GROUP, \"\")).thenReturn(true);\n        List<Instance> result = client.getAllInstances(serviceName);\n        assertEquals(serviceInfo.getHosts().get(0), result.get(0));\n    }"
+    },
+    "aSource": {
+      "startLine": 566,
+      "code": "@Test\n    void testGetAllInstanceWithCacheAndSubscribed() throws NacosException {\n        String serviceName = \"service1\";\n        ServiceInfo serviceInfo = new ServiceInfo();\n        serviceInfo.setName(serviceName);\n        serviceInfo.addHost(new Instance());\n        when(serviceInfoHolder.getServiceInfo(serviceName, Constants.DEFAULT_GROUP)).thenReturn(serviceInfo);\n        when(proxy.isSubscribed(serviceName, Constants.DEFAULT_GROUP, \"\")).thenReturn(true);\n        List<Instance> result = client.getAllInstances(serviceName);\n        assertEquals(serviceInfo.getHosts().get(0), result.get(0));\n    }"
+    },
+    "bPath": "client/src/test/java/com/alibaba/nacos/client/naming/NacosNamingServiceTest.java",
+    "aPath": "client/src/test/java/com/alibaba/nacos/client/naming/NacosNamingServiceTest.java",
+    "bCommit": "f257fca5f",
+    "aCommit": "fa79474de",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "when(serviceInfoHolder.getServiceInfo(serviceName, Constants.DEFAULT_GROUP, \"\")).thenReturn(serviceInfo);",
+          "type": "DELETE",
+          "lineNo": 572
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "when(serviceInfoHolder.getServiceInfo(serviceName, Constants.DEFAULT_GROUP)).thenReturn(serviceInfo);",
+          "type": "ADD",
+          "lineNo": 572
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "thenReturn(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "when(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "when(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder.getServiceInfo(String,String,String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder serviceInfoHolder"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder.getServiceInfo(String,String,String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String serviceName"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String DEFAULT_GROUP"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.api.common.Constants"
+        },
+        {
+          "type": "CtFieldReference",
+          "value": "java.lang.String DEFAULT_GROUP"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String ''"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "thenReturn(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.api.naming.pojo.ServiceInfo serviceInfo"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "thenReturn(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "when(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "when(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder.getServiceInfo(String,String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder serviceInfoHolder"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder.getServiceInfo(String,String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String serviceName"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String DEFAULT_GROUP"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.api.common.Constants"
+        },
+        {
+          "type": "CtFieldReference",
+          "value": "java.lang.String DEFAULT_GROUP"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "thenReturn(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.api.naming.pojo.ServiceInfo serviceInfo"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Delete",
+        "nodeType": "Literal",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\"\"",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        572
+      ]
+    },
+    "aCommitTime": 1740973373,
+    "ID": "alibaba/nacos:20",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.client.naming.NacosNamingServiceTest.testSubscribeDuplicate()",
+    "bSource": {
+      "startLine": 988,
+      "code": "@Test\n    void testSubscribeDuplicate() throws NacosException {\n        String serviceName = \"service1\";\n        when(proxy.isSubscribed(serviceName, Constants.DEFAULT_GROUP, StringUtils.EMPTY)).thenReturn(true);\n        ServiceInfo serviceInfo = new ServiceInfo(Constants.DEFAULT_GROUP + \"@@\" + serviceName);\n        serviceInfo.addHost(new Instance());\n        when(serviceInfoHolder.getServiceInfo(serviceName, Constants.DEFAULT_GROUP, \"\")).thenReturn(serviceInfo);\n        final AtomicBoolean flag = new AtomicBoolean(false);\n        client.subscribe(serviceName, event -> flag.set(true));\n        assertTrue(flag.get());\n    }"
+    },
+    "aSource": {
+      "startLine": 988,
+      "code": "@Test\n    void testSubscribeDuplicate() throws NacosException {\n        String serviceName = \"service1\";\n        when(proxy.isSubscribed(serviceName, Constants.DEFAULT_GROUP, StringUtils.EMPTY)).thenReturn(true);\n        ServiceInfo serviceInfo = new ServiceInfo(Constants.DEFAULT_GROUP + \"@@\" + serviceName);\n        serviceInfo.addHost(new Instance());\n        when(serviceInfoHolder.getServiceInfo(serviceName, Constants.DEFAULT_GROUP)).thenReturn(serviceInfo);\n        final AtomicBoolean flag = new AtomicBoolean(false);\n        client.subscribe(serviceName, event -> flag.set(true));\n        assertTrue(flag.get());\n    }"
+    },
+    "bPath": "client/src/test/java/com/alibaba/nacos/client/naming/NacosNamingServiceTest.java",
+    "aPath": "client/src/test/java/com/alibaba/nacos/client/naming/NacosNamingServiceTest.java",
+    "bCommit": "f257fca5f",
+    "aCommit": "fa79474de",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "when(serviceInfoHolder.getServiceInfo(serviceName, Constants.DEFAULT_GROUP, \"\")).thenReturn(serviceInfo);",
+          "type": "DELETE",
+          "lineNo": 994
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "when(serviceInfoHolder.getServiceInfo(serviceName, Constants.DEFAULT_GROUP)).thenReturn(serviceInfo);",
+          "type": "ADD",
+          "lineNo": 994
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "thenReturn(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "when(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "when(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder.getServiceInfo(String,String,String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder serviceInfoHolder"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder.getServiceInfo(String,String,String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String serviceName"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String DEFAULT_GROUP"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.api.common.Constants"
+        },
+        {
+          "type": "CtFieldReference",
+          "value": "java.lang.String DEFAULT_GROUP"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String ''"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "thenReturn(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.api.naming.pojo.ServiceInfo serviceInfo"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "thenReturn(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "when(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "when(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder.getServiceInfo(String,String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder serviceInfoHolder"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.client.naming.cache.ServiceInfoHolder.getServiceInfo(String,String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String serviceName"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String DEFAULT_GROUP"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.api.common.Constants"
+        },
+        {
+          "type": "CtFieldReference",
+          "value": "java.lang.String DEFAULT_GROUP"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "thenReturn(com.alibaba.nacos.api.naming.pojo.ServiceInfo)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.api.naming.pojo.ServiceInfo serviceInfo"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Delete",
+        "nodeType": "Literal",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\"\"",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        994
+      ]
+    },
+    "aCommitTime": 1740973373,
+    "ID": "alibaba/nacos:21",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.client.naming.NacosNamingServiceTest.testSubscribeDuplicate()",
+    "bSource": {
+      "startLine": 988,
+      "code": "@Test\n    void testSubscribeDuplicate() throws NacosException {\n        String serviceName = \"service1\";\n        when(changeNotifier.isSubscribed(Constants.DEFAULT_GROUP, serviceName)).thenReturn(true);\n        ServiceInfo serviceInfo = new ServiceInfo(Constants.DEFAULT_GROUP + \"@@\" + serviceName);\n        serviceInfo.addHost(new Instance());\n        when(serviceInfoHolder.getServiceInfo(serviceName, Constants.DEFAULT_GROUP, \"\")).thenReturn(serviceInfo);\n        final AtomicBoolean flag = new AtomicBoolean(false);\n        client.subscribe(serviceName, event -> flag.set(true));\n        assertTrue(flag.get());\n    }"
+    },
+    "aSource": {
+      "startLine": 988,
+      "code": "@Test\n    void testSubscribeDuplicate() throws NacosException {\n        String serviceName = \"service1\";\n        when(proxy.isSubscribed(serviceName, Constants.DEFAULT_GROUP, StringUtils.EMPTY)).thenReturn(true);\n        ServiceInfo serviceInfo = new ServiceInfo(Constants.DEFAULT_GROUP + \"@@\" + serviceName);\n        serviceInfo.addHost(new Instance());\n        when(serviceInfoHolder.getServiceInfo(serviceName, Constants.DEFAULT_GROUP, \"\")).thenReturn(serviceInfo);\n        final AtomicBoolean flag = new AtomicBoolean(false);\n        client.subscribe(serviceName, event -> flag.set(true));\n        assertTrue(flag.get());\n    }"
+    },
+    "bPath": "client/src/test/java/com/alibaba/nacos/client/naming/NacosNamingServiceTest.java",
+    "aPath": "client/src/test/java/com/alibaba/nacos/client/naming/NacosNamingServiceTest.java",
+    "bCommit": "e6f46f000",
+    "aCommit": "f03cd12bf",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "when(changeNotifier.isSubscribed(Constants.DEFAULT_GROUP, serviceName)).thenReturn(true);",
+          "type": "DELETE",
+          "lineNo": 991
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "when(proxy.isSubscribed(serviceName, Constants.DEFAULT_GROUP, StringUtils.EMPTY)).thenReturn(true);",
+          "type": "ADD",
+          "lineNo": 991
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "thenReturn(boolean)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "when(boolean)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "when(boolean)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.client.naming.event.InstancesChangeNotifier.isSubscribed(String,String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.client.naming.event.InstancesChangeNotifier changeNotifier"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.client.naming.event.InstancesChangeNotifier.isSubscribed(String,String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String DEFAULT_GROUP"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.api.common.Constants"
+        },
+        {
+          "type": "CtFieldReference",
+          "value": "java.lang.String DEFAULT_GROUP"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String serviceName"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "thenReturn(boolean)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "boolean 'true'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "thenReturn(boolean)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "when(boolean)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "when(boolean)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.client.naming.remote.NamingClientProxy.isSubscribed(String,String,String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.client.naming.remote.NamingClientProxy proxy"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.client.naming.remote.NamingClientProxy.isSubscribed(String,String,String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String serviceName"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String DEFAULT_GROUP"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.api.common.Constants"
+        },
+        {
+          "type": "CtFieldReference",
+          "value": "java.lang.String DEFAULT_GROUP"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String EMPTY"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.common.utils.StringUtils"
+        },
+        {
+          "type": "CtFieldReference",
+          "value": "java.lang.String EMPTY"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "thenReturn(boolean)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "boolean 'true'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "FieldRead",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "changeNotifier",
+          "childCount": 1
+        },
+        "dstNode": {
+          "label": "proxy",
+          "childCount": 1
+        }
+      },
+      {
+        "type": "Delete",
+        "nodeType": "VariableRead",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "serviceName",
+          "childCount": 0
+        }
+      },
+      {
+        "type": "Insert",
+        "nodeType": "VariableRead",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "serviceName",
+          "childCount": 0
+        }
+      },
+      {
+        "type": "Insert",
+        "nodeType": "TypeAccess",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "StringUtils.EMPTY",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "failure",
+      "error_lines": [
+        997
+      ]
+    },
+    "aCommitTime": 1740547946,
+    "ID": "alibaba/nacos:12",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.config.server.remote.ConfigQueryRequestHandlerTest.testGetTagAutoTag()",
+    "bSource": {
+      "startLine": 273,
+      "code": "/**\n     * get tao config of auto tag matchd from local disk.\n     *\n     * @throws Exception Exception.\n     */\n    @Test\n    void testGetTagAutoTag() throws Exception {\n        \n        final String groupKey = GroupKey2.getKey(dataId, group, \"\");\n        String content = \"content_from_tag_notdirectread\u00c4\u00e3\u00ba\u00c3\" + System.currentTimeMillis();\n        ConfigRocksDbDiskService configRocksDbDiskService = Mockito.mock(ConfigRocksDbDiskService.class);\n        when(ConfigDiskServiceFactory.getInstance()).thenReturn(configRocksDbDiskService);\n        \n        String autoTag = \"auto_tag\";\n        CacheItem cacheItem = new CacheItem(groupKey);\n        cacheItem.initConfigGrayIfEmpty(TagGrayRule.TYPE_TAG + \"_\" + autoTag);\n        cacheItem.getConfigCache().setMd5(MD5Utils.md5Hex(content, \"UTF-8\"));\n        ConfigCacheGray configCacheGrayTag = cacheItem.getConfigCacheGray().get(TagGrayRule.TYPE_TAG + \"_\" + autoTag);\n        String tagContent = \"content_from_specific_tag_directread\u00c4\u00e3\u00ba\u00c3\" + System.currentTimeMillis();\n        configCacheGrayTag.setMd5(MD5Utils.md5Hex(tagContent, \"UTF-8\"));\n        configCacheGrayTag.setEncryptedDataKey(\"key_testGetTag_AutoTag_NotDirectRead\");\n        ConfigGrayPersistInfo configGrayPersistInfo = new ConfigGrayPersistInfo(TagGrayRule.TYPE_TAG,\n                TagGrayRule.VERSION, autoTag, -999);\n        configCacheGrayTag.resetGrayRule(GrayRuleManager.serializeConfigGrayPersistInfo(configGrayPersistInfo));\n        cacheItem.sortConfigGray();\n        when(ConfigCacheService.getContentCache(eq(groupKey))).thenReturn(cacheItem);\n        \n        ConfigQueryRequest configQueryRequest = new ConfigQueryRequest();\n        configQueryRequest.setDataId(dataId);\n        configQueryRequest.setGroup(group);\n        RequestMeta requestMeta = new RequestMeta();\n        requestMeta.setClientIp(\"127.0.0.1\");\n        requestMeta.getAppLabels().put(VIPSERVER_TAG, autoTag);\n        //mock disk read.\n        when(configRocksDbDiskService.getGrayContent(eq(dataId), eq(group), eq(null),\n                eq(TagGrayRule.TYPE_TAG + \"_\" + autoTag))).thenReturn(tagContent);\n        ConfigQueryResponse response = configQueryRequestHandler.handle(configQueryRequest, requestMeta);\n        \n        //check content&md5\n        assertEquals(tagContent, response.getContent());\n        assertEquals(MD5Utils.md5Hex(tagContent, \"UTF-8\"), response.getMd5());\n        assertEquals(\"key_testGetTag_AutoTag_NotDirectRead\", response.getEncryptedDataKey());\n        \n        //check flags.\n        assertFalse(response.isBeta());\n        assertEquals(response.getTag(), autoTag);\n        \n    }"
+    },
+    "aSource": {
+      "startLine": 273,
+      "code": "/**\n     * get tao config of auto tag matchd from local disk.\n     *\n     * @throws Exception Exception.\n     */\n    @Test\n    void testGetTagAutoTag() throws Exception {\n        \n        final String groupKey = GroupKey2.getKey(dataId, group, \"\");\n        String content = \"content_from_tag_notdirectread\u00c4\u00e3\u00ba\u00c3\" + System.currentTimeMillis();\n        ConfigRocksDbDiskService configRocksDbDiskService = Mockito.mock(ConfigRocksDbDiskService.class);\n        when(ConfigDiskServiceFactory.getInstance()).thenReturn(configRocksDbDiskService);\n        \n        String autoTag = \"auto_tag\";\n        CacheItem cacheItem = new CacheItem(groupKey);\n        cacheItem.initConfigGrayIfEmpty(TagGrayRule.TYPE_TAG + \"_\" + autoTag);\n        cacheItem.getConfigCache().setMd5(MD5Utils.md5Hex(content, \"UTF-8\"));\n        ConfigCacheGray configCacheGrayTag = cacheItem.getConfigCacheGray().get(TagGrayRule.TYPE_TAG + \"_\" + autoTag);\n        String tagContent = \"content_from_specific_tag_directread\u00c4\u00e3\u00ba\u00c3\" + System.currentTimeMillis();\n        configCacheGrayTag.setMd5(MD5Utils.md5Hex(tagContent, \"UTF-8\"));\n        configCacheGrayTag.setEncryptedDataKey(\"key_testGetTag_AutoTag_NotDirectRead\");\n        ConfigGrayPersistInfo configGrayPersistInfo = new ConfigGrayPersistInfo(TagGrayRule.TYPE_TAG,\n                TagGrayRule.VERSION, autoTag, -999);\n        configCacheGrayTag.resetGrayRule(GrayRuleManager.serializeConfigGrayPersistInfo(configGrayPersistInfo));\n        cacheItem.sortConfigGray();\n        when(ConfigCacheService.getContentCache(eq(groupKey))).thenReturn(cacheItem);\n        \n        ConfigQueryRequest configQueryRequest = new ConfigQueryRequest();\n        configQueryRequest.setDataId(dataId);\n        configQueryRequest.setGroup(group);\n        RequestMeta requestMeta = new RequestMeta();\n        requestMeta.setClientIp(\"127.0.0.1\");\n        requestMeta.getAppLabels().put(VIPSERVER_TAG, autoTag);\n        //mock disk read.\n        when(configRocksDbDiskService.getGrayContent(eq(dataId), eq(group), eq(\"\"),\n                eq(TagGrayRule.TYPE_TAG + \"_\" + autoTag))).thenReturn(tagContent);\n        ConfigQueryResponse response = configQueryRequestHandler.handle(configQueryRequest, requestMeta);\n        \n        //check content&md5\n        assertEquals(tagContent, response.getContent());\n        assertEquals(MD5Utils.md5Hex(tagContent, \"UTF-8\"), response.getMd5());\n        assertEquals(\"key_testGetTag_AutoTag_NotDirectRead\", response.getEncryptedDataKey());\n        \n        //check flags.\n        assertFalse(response.isBeta());\n        assertEquals(response.getTag(), autoTag);\n        \n    }"
+    },
+    "bPath": "config/src/test/java/com/alibaba/nacos/config/server/remote/ConfigQueryRequestHandlerTest.java",
+    "aPath": "config/src/test/java/com/alibaba/nacos/config/server/remote/ConfigQueryRequestHandlerTest.java",
+    "bCommit": "3f636bfc6",
+    "aCommit": "c7386cf49",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "when(configRocksDbDiskService.getGrayContent(eq(dataId), eq(group), eq(null),",
+          "type": "DELETE",
+          "lineNo": 307
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "when(configRocksDbDiskService.getGrayContent(eq(dataId), eq(group), eq(\"\"),",
+          "type": "ADD",
+          "lineNo": 307
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "thenReturn(java.lang.String)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "when(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "when(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.config.server.service.dump.disk.ConfigRocksDbDiskService.getGrayContent(String,String,String,String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.config.server.service.dump.disk.ConfigRocksDbDiskService configRocksDbDiskService"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.config.server.service.dump.disk.ConfigRocksDbDiskService.getGrayContent(String,String,String,String)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String dataId"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String group"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(<unknown>)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "thenReturn(java.lang.String)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "when(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "when(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.config.server.service.dump.disk.ConfigRocksDbDiskService.getGrayContent(String,String,String,String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.config.server.service.dump.disk.ConfigRocksDbDiskService configRocksDbDiskService"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.config.server.service.dump.disk.ConfigRocksDbDiskService.getGrayContent(String,String,String,String)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String dataId"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String group"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String ''"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Literal",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "null",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "\"\"",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "failure",
+      "error_lines": [
+        312
+      ]
+    },
+    "aCommitTime": 1739172094,
+    "ID": "alibaba/nacos:16",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.naming.core.v2.metadata.NamingMetadataManagerTest.testRemoveInstanceMetadata()",
+    "bSource": {
+      "startLine": 165,
+      "code": "@Test\n    void testRemoveInstanceMetadata() {\n        \n        namingMetadataManager.removeInstanceMetadata(service, METADATA_ID);\n        \n        Optional<InstanceMetadata> instanceMetadata = namingMetadataManager.getInstanceMetadata(service, METADATA_ID);\n        \n        assertFalse(instanceMetadata.isPresent());\n    }"
+    },
+    "aSource": {
+      "startLine": 165,
+      "code": "@Test\n    void testRemoveInstanceMetadata() {\n        \n        namingMetadataManager.removeInstanceMetadata(service, METADATA_ID);\n        \n        Optional<InstanceMetadata> instanceMetadata = namingMetadataManager.getInstanceMetadata(service, METADATA_ID);\n        \n        assertFalse(instanceMetadata.isPresent());\n\n        Map<Service, ConcurrentMap<String, InstanceMetadata>> instanceMetadataSnapshot = namingMetadataManager.getInstanceMetadataSnapshot();\n        \n        assertEquals(0, instanceMetadataSnapshot.size());\n    }"
+    },
+    "bPath": "naming/src/test/java/com/alibaba/nacos/naming/core/v2/metadata/NamingMetadataManagerTest.java",
+    "aPath": "naming/src/test/java/com/alibaba/nacos/naming/core/v2/metadata/NamingMetadataManagerTest.java",
+    "bCommit": "055618133",
+    "aCommit": "762303b94",
+    "hunk": {
+      "targetChanges": [
+        {
+          "line": "Map<Service, ConcurrentMap<String, InstanceMetadata>> instanceMetadataSnapshot = namingMetadataManager.getInstanceMetadataSnapshot();",
+          "type": "ADD",
+          "lineNo": 174
+        },
+        {
+          "line": "assertEquals(0, instanceMetadataSnapshot.size());",
+          "type": "ADD",
+          "lineNo": 176
+        }
+      ],
+      "type": "ADD",
+      "sourceElements": [],
+      "targetElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "java.util.Map instanceMetadataSnapshot"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "java.util.Map"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.alibaba.nacos.naming.core.v2.pojo.Service"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "java.util.concurrent.ConcurrentMap"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "java.lang.String"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.alibaba.nacos.naming.core.v2.metadata.InstanceMetadata"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.naming.core.v2.metadata.NamingMetadataManager.getInstanceMetadataSnapshot()"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.naming.core.v2.metadata.NamingMetadataManager namingMetadataManager"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.naming.core.v2.metadata.NamingMetadataManager.getInstanceMetadataSnapshot()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(int,int)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(int,int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "java.util.Map.size()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.util.Map instanceMetadataSnapshot"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "java.util.Map.size()"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "LocalVariable",
+        "parents": [
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "instanceMetadataSnapshot",
+          "childCount": 2
+        }
+      },
+      {
+        "type": "Insert",
+        "nodeType": "Invocation",
+        "parents": [
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "assertEquals",
+          "childCount": 2
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "success",
+      "error_lines": null
+    },
+    "aCommitTime": 1734520470,
+    "ID": "alibaba/nacos:10",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.plugin.datasource.impl.derby.HistoryConfigInfoMapperByDerbyTest.testFindDeletedConfig()",
+    "bSource": {
+      "startLine": 81,
+      "code": "@Test\n    void testFindDeletedConfig() {\n        MapperResult mapperResult = historyConfigInfoMapperByDerby.findDeletedConfig(context);\n        assertEquals(mapperResult.getSql(), \"SELECT id, nid, data_id, group_id, app_name, content, md5, gmt_create, gmt_modified, src_user, src_ip,\"\n                + \" op_type, tenant_id, publish_type, ext_info, encrypted_data_key FROM his_config_info WHERE op_type = 'D' AND \"\n                + \"publish_type = ? and gmt_modified >= ? and nid > ? order by nid OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY\");\n        assertArrayEquals(new Object[] {publishType, startTime, lastMaxId, pageSize}, mapperResult.getParamList().toArray());\n    }"
+    },
+    "aSource": {
+      "startLine": 81,
+      "code": "@Test\n    void testFindDeletedConfig() {\n        MapperResult mapperResult = historyConfigInfoMapperByDerby.findDeletedConfig(context);\n        assertEquals(\n                \"SELECT id, nid, data_id, group_id, app_name, content, md5, gmt_create, gmt_modified, src_user, src_ip,\"\n                        + \" op_type, tenant_id, publish_type,gray_name, ext_info, encrypted_data_key FROM his_config_info WHERE op_type = 'D' AND \"\n                        + \"publish_type = ? and gmt_modified >= ? and nid > ? order by nid OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY\",\n                mapperResult.getSql());\n        assertArrayEquals(new Object[] {publishType, startTime, lastMaxId, pageSize},\n                mapperResult.getParamList().toArray());\n    }"
+    },
+    "bPath": "plugin/datasource/src/test/java/com/alibaba/nacos/plugin/datasource/impl/derby/HistoryConfigInfoMapperByDerbyTest.java",
+    "aPath": "plugin/datasource/src/test/java/com/alibaba/nacos/plugin/datasource/impl/derby/HistoryConfigInfoMapperByDerbyTest.java",
+    "bCommit": "08fac169f",
+    "aCommit": "98c9760d8",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "assertEquals(mapperResult.getSql(), \"SELECT id, nid, data_id, group_id, app_name, content, md5, gmt_create, gmt_modified, src_user, src_ip,\"",
+          "type": "DELETE",
+          "lineNo": 84
+        },
+        {
+          "line": "+ \" op_type, tenant_id, publish_type, ext_info, encrypted_data_key FROM his_config_info WHERE op_type = 'D' AND \"",
+          "type": "DELETE",
+          "lineNo": 85
+        },
+        {
+          "line": "+ \"publish_type = ? and gmt_modified >= ? and nid > ? order by nid OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY\");",
+          "type": "DELETE",
+          "lineNo": 86
+        },
+        {
+          "line": "assertArrayEquals(new Object[] {publishType, startTime, lastMaxId, pageSize}, mapperResult.getParamList().toArray());",
+          "type": "DELETE",
+          "lineNo": 87
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "assertEquals(",
+          "type": "ADD",
+          "lineNo": 84
+        },
+        {
+          "line": "\"SELECT id, nid, data_id, group_id, app_name, content, md5, gmt_create, gmt_modified, src_user, src_ip,\"",
+          "type": "ADD",
+          "lineNo": 85
+        },
+        {
+          "line": "+ \" op_type, tenant_id, publish_type,gray_name, ext_info, encrypted_data_key FROM his_config_info WHERE op_type = 'D' AND \"",
+          "type": "ADD",
+          "lineNo": 86
+        },
+        {
+          "line": "+ \"publish_type = ? and gmt_modified >= ? and nid > ? order by nid OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY\",",
+          "type": "ADD",
+          "lineNo": 87
+        },
+        {
+          "line": "mapperResult.getSql());",
+          "type": "ADD",
+          "lineNo": 88
+        },
+        {
+          "line": "assertArrayEquals(new Object[] {publishType, startTime, lastMaxId, pageSize},",
+          "type": "ADD",
+          "lineNo": 89
+        },
+        {
+          "line": "mapperResult.getParamList().toArray());",
+          "type": "ADD",
+          "lineNo": 90
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperResult.getSql()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperResult mapperResult"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperResult.getSql()"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'SELECT id, nid, data_id, group_id, app_name, content, md5, gmt_create, gmt_modified, src_user, src_ip,'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String ' op_type, tenant_id, publish_type, ext_info, encrypted_data_key FROM his_config_info WHERE op_type = 'D' AND '"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'publish_type = ? and gmt_modified >= ? and nid > ? order by nid OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertArrayEquals(java.lang.Object[],java.lang.Object[])"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertArrayEquals(java.lang.Object[],java.lang.Object[])"
+        },
+        {
+          "type": "CtNewArray",
+          "value": "Object[]"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "java.lang.Object"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String publishType"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.sql.Timestamp startTime"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "int lastMaxId"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "int pageSize"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "java.util.List.toArray()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperResult.getParamList()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperResult mapperResult"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperResult.getParamList()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "java.util.List.toArray()"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'SELECT id, nid, data_id, group_id, app_name, content, md5, gmt_create, gmt_modified, src_user, src_ip,'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String ' op_type, tenant_id, publish_type,gray_name, ext_info, encrypted_data_key FROM his_config_info WHERE op_type = 'D' AND '"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'publish_type = ? and gmt_modified >= ? and nid > ? order by nid OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperResult.getSql()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperResult mapperResult"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperResult.getSql()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertArrayEquals(java.lang.Object[],java.lang.Object[])"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertArrayEquals(java.lang.Object[],java.lang.Object[])"
+        },
+        {
+          "type": "CtNewArray",
+          "value": "Object[]"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "java.lang.Object"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String publishType"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.sql.Timestamp startTime"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "int lastMaxId"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "int pageSize"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "java.util.List.toArray()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperResult.getParamList()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperResult mapperResult"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperResult.getParamList()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "java.util.List.toArray()"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Literal",
+        "parents": [
+          "BinaryOperator",
+          "BinaryOperator",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\" op_type, tenant_id, publish_type, ext_info, encrypted_data_key FROM his_config_info WHERE op_type = 'D' AND \"",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "\" op_type, tenant_id, publish_type,gray_name, ext_info, encrypted_data_key FROM his_config_info WHERE op_type = 'D' AND \"",
+          "childCount": 0
+        }
+      },
+      {
+        "type": "Move",
+        "nodeType": "Invocation",
+        "parents": [
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "getSql",
+          "childCount": 1
+        },
+        "dstNode": {
+          "label": "getSql",
+          "childCount": 1
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "failure",
+      "error_lines": [
+        84
+      ]
+    },
+    "aCommitTime": 1734342329,
+    "ID": "alibaba/nacos:17",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.config.server.service.repository.embedded.EmbeddedConfigInfoGrayPersistServiceImplTest.testRemoveConfigInfoGrayName()",
+    "bSource": {
+      "startLine": 296,
+      "code": "@Test\n    public void testRemoveConfigInfoGrayName() {\n        String dataId = \"dataId1112222\";\n        String group = \"group22\";\n        String tenant = \"tenant2\";\n        final String srcIp = \"ip345678\";\n        final String srcUser = \"user1234567\";\n        final String grayName = \"grayName...\";\n        \n        //mock exist config info\n        ConfigInfoGrayWrapper configAllInfo4Gray = new ConfigInfoGrayWrapper();\n        configAllInfo4Gray.setDataId(dataId);\n        configAllInfo4Gray.setGroup(group);\n        configAllInfo4Gray.setTenant(tenant);\n        configAllInfo4Gray.setMd5(\"old_md5\");\n        \n        when(databaseOperate.queryOne(anyString(), eq(new Object[] {dataId, group, tenant, grayName}),\n                eq(CONFIG_INFO_GRAY_WRAPPER_ROW_MAPPER))).thenReturn(configAllInfo4Gray);\n        \n        embeddedConfigInfoGrayPersistService.removeConfigInfoGray(dataId, group, tenant, grayName, srcIp, srcUser);\n        \n        //verify delete sql invoked.\n        embeddedStorageContextHolderMockedStatic.verify(\n                () -> EmbeddedStorageContextHolder.addSqlContext(anyString(), eq(dataId), eq(group), eq(tenant),\n                        eq(grayName)), times(1));\n        Mockito.verify(historyConfigInfoPersistService, times(1)).insertConfigHistoryAtomic(\n                eq(configAllInfo4Gray.getId()), eq(configAllInfo4Gray), eq(srcIp), eq(srcUser), any(Timestamp.class), eq(\"D\"),\n                eq(\"gray\"), anyString());\n    }"
+    },
+    "aSource": {
+      "startLine": 296,
+      "code": "@Test\n    public void testRemoveConfigInfoGrayName() {\n        String dataId = \"dataId1112222\";\n        String group = \"group22\";\n        String tenant = \"tenant2\";\n        final String srcIp = \"ip345678\";\n        final String srcUser = \"user1234567\";\n        final String grayName = \"grayName...\";\n        \n        //mock exist config info\n        ConfigInfoGrayWrapper configAllInfo4Gray = new ConfigInfoGrayWrapper();\n        configAllInfo4Gray.setDataId(dataId);\n        configAllInfo4Gray.setGroup(group);\n        configAllInfo4Gray.setTenant(tenant);\n        configAllInfo4Gray.setMd5(\"old_md5\");\n        \n        when(databaseOperate.queryOne(anyString(), eq(new Object[] {dataId, group, tenant, grayName}),\n                eq(CONFIG_INFO_GRAY_WRAPPER_ROW_MAPPER))).thenReturn(configAllInfo4Gray);\n        \n        embeddedConfigInfoGrayPersistService.removeConfigInfoGray(dataId, group, tenant, grayName, srcIp, srcUser);\n        \n        //verify delete sql invoked.\n        embeddedStorageContextHolderMockedStatic.verify(\n                () -> EmbeddedStorageContextHolder.addSqlContext(anyString(), eq(dataId), eq(group), eq(tenant),\n                        eq(grayName)), times(1));\n        Mockito.verify(historyConfigInfoPersistService, times(1))\n                .insertConfigHistoryAtomic(eq(configAllInfo4Gray.getId()), eq(configAllInfo4Gray), eq(srcIp),\n                        eq(srcUser), any(Timestamp.class), eq(\"D\"), eq(\"gray\"), eq(grayName), anyString());\n    }"
+    },
+    "bPath": "config/src/test/java/com/alibaba/nacos/config/server/service/repository/embedded/EmbeddedConfigInfoGrayPersistServiceImplTest.java",
+    "aPath": "config/src/test/java/com/alibaba/nacos/config/server/service/repository/embedded/EmbeddedConfigInfoGrayPersistServiceImplTest.java",
+    "bCommit": "08fac169f",
+    "aCommit": "98c9760d8",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "Mockito.verify(historyConfigInfoPersistService, times(1)).insertConfigHistoryAtomic(",
+          "type": "DELETE",
+          "lineNo": 321
+        },
+        {
+          "line": "eq(configAllInfo4Gray.getId()), eq(configAllInfo4Gray), eq(srcIp), eq(srcUser), any(Timestamp.class), eq(\"D\"),",
+          "type": "DELETE",
+          "lineNo": 322
+        },
+        {
+          "line": "eq(\"gray\"), anyString());",
+          "type": "DELETE",
+          "lineNo": 323
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "Mockito.verify(historyConfigInfoPersistService, times(1))",
+          "type": "ADD",
+          "lineNo": 321
+        },
+        {
+          "line": ".insertConfigHistoryAtomic(eq(configAllInfo4Gray.getId()), eq(configAllInfo4Gray), eq(srcIp),",
+          "type": "ADD",
+          "lineNo": 322
+        },
+        {
+          "line": "eq(srcUser), any(Timestamp.class), eq(\"D\"), eq(\"gray\"), eq(grayName), anyString());",
+          "type": "ADD",
+          "lineNo": 323
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "insertConfigHistoryAtomic()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "verify(com.alibaba.nacos.config.server.service.repository.HistoryConfigInfoPersistService)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.mockito.Mockito"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "verify(com.alibaba.nacos.config.server.service.repository.HistoryConfigInfoPersistService)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.config.server.service.repository.HistoryConfigInfoPersistService historyConfigInfoPersistService"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "times(int)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "times(int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '1'"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "insertConfigHistoryAtomic()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(long)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(long)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.config.server.model.ConfigInfoBase.getId()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.config.server.model.ConfigInfoGrayWrapper configAllInfo4Gray"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.config.server.model.ConfigInfoBase.getId()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(com.alibaba.nacos.config.server.model.ConfigInfoGrayWrapper)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(com.alibaba.nacos.config.server.model.ConfigInfoGrayWrapper)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.config.server.model.ConfigInfoGrayWrapper configAllInfo4Gray"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String srcIp"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String srcUser"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "any(java.lang.Class)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "any(java.lang.Class)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.Class class"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'D'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'gray'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "anyString()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "anyString()"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "insertConfigHistoryAtomic()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "verify(com.alibaba.nacos.config.server.service.repository.HistoryConfigInfoPersistService)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.mockito.Mockito"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "verify(com.alibaba.nacos.config.server.service.repository.HistoryConfigInfoPersistService)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.config.server.service.repository.HistoryConfigInfoPersistService historyConfigInfoPersistService"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "times(int)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "times(int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '1'"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "insertConfigHistoryAtomic()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(long)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(long)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.config.server.model.ConfigInfoBase.getId()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.config.server.model.ConfigInfoGrayWrapper configAllInfo4Gray"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.config.server.model.ConfigInfoBase.getId()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(com.alibaba.nacos.config.server.model.ConfigInfoGrayWrapper)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(com.alibaba.nacos.config.server.model.ConfigInfoGrayWrapper)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.config.server.model.ConfigInfoGrayWrapper configAllInfo4Gray"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String srcIp"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String srcUser"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "any(java.lang.Class)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "any(java.lang.Class)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.Class class"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'D'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'gray'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "eq(java.lang.String)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String grayName"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "anyString()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "anyString()"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "Invocation",
+        "parents": [
+          "Invocation",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "eq",
+          "childCount": 1
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        321
+      ]
+    },
+    "aCommitTime": 1734342329,
+    "ID": "alibaba/nacos:18",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.core.service.NamespaceOperationServiceTest.testGetNamespaceList()",
+    "bSource": {
+      "startLine": 84,
+      "code": "@Test\n    void testGetNamespaceList() {\n        TenantInfo tenantInfo = new TenantInfo();\n        tenantInfo.setTenantId(TEST_NAMESPACE_ID);\n        tenantInfo.setTenantName(TEST_NAMESPACE_NAME);\n        tenantInfo.setTenantDesc(TEST_NAMESPACE_DESC);\n        when(namespacePersistService.findTenantByKp(DEFAULT_KP)).thenReturn(Collections.singletonList(tenantInfo));\n        \n        List<Namespace> list = namespaceOperationService.getNamespaceList();\n        assertEquals(2, list.size());\n        Namespace namespaceA = list.get(0);\n        assertEquals(\"\", namespaceA.getNamespace());\n        assertEquals(DEFAULT_NAMESPACE, namespaceA.getNamespaceShowName());\n        assertEquals(DEFAULT_QUOTA, namespaceA.getQuota());\n        assertEquals(1, namespaceA.getConfigCount());\n        \n        Namespace namespaceB = list.get(1);\n        assertEquals(TEST_NAMESPACE_ID, namespaceB.getNamespace());\n        assertEquals(TEST_NAMESPACE_NAME, namespaceB.getNamespaceShowName());\n        assertEquals(1, namespaceB.getConfigCount());\n    }"
+    },
+    "aSource": {
+      "startLine": 86,
+      "code": "@Test\n    void testGetNamespaceList() {\n        TenantInfo tenantInfo = new TenantInfo();\n        tenantInfo.setTenantId(TEST_NAMESPACE_ID);\n        tenantInfo.setTenantName(TEST_NAMESPACE_NAME);\n        tenantInfo.setTenantDesc(TEST_NAMESPACE_DESC);\n        when(namespacePersistService.findTenantByKp(DEFAULT_KP)).thenReturn(Collections.singletonList(tenantInfo));\n        \n        List<Namespace> list = namespaceOperationService.getNamespaceList();\n        assertEquals(2, list.size());\n        Namespace namespaceA = list.get(0);\n        assertEquals(\"\", namespaceA.getNamespace());\n        assertEquals(DEFAULT_NAMESPACE_SHOW_NAME, namespaceA.getNamespaceShowName());\n        assertEquals(DEFAULT_NAMESPACE_DESCRIPTION, namespaceA.getNamespaceDesc());\n        assertEquals(DEFAULT_QUOTA, namespaceA.getQuota());\n        assertEquals(1, namespaceA.getConfigCount());\n        \n        Namespace namespaceB = list.get(1);\n        assertEquals(TEST_NAMESPACE_ID, namespaceB.getNamespace());\n        assertEquals(TEST_NAMESPACE_NAME, namespaceB.getNamespaceShowName());\n        assertEquals(1, namespaceB.getConfigCount());\n    }"
+    },
+    "bPath": "core/src/test/java/com/alibaba/nacos/core/service/NamespaceOperationServiceTest.java",
+    "aPath": "core/src/test/java/com/alibaba/nacos/core/service/NamespaceOperationServiceTest.java",
+    "bCommit": "2c1a51138",
+    "aCommit": "5c0fa0dc6",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "assertEquals(DEFAULT_NAMESPACE, namespaceA.getNamespaceShowName());",
+          "type": "DELETE",
+          "lineNo": 96
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "assertEquals(DEFAULT_NAMESPACE_SHOW_NAME, namespaceA.getNamespaceShowName());",
+          "type": "ADD",
+          "lineNo": 98
+        },
+        {
+          "line": "assertEquals(DEFAULT_NAMESPACE_DESCRIPTION, namespaceA.getNamespaceDesc());",
+          "type": "ADD",
+          "lineNo": 99
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String DEFAULT_NAMESPACE"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.core.namespace.model.Namespace.getNamespaceShowName()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.core.namespace.model.Namespace namespaceA"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.core.namespace.model.Namespace.getNamespaceShowName()"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String DEFAULT_NAMESPACE_SHOW_NAME"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.core.namespace.model.Namespace.getNamespaceShowName()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.core.namespace.model.Namespace namespaceA"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.core.namespace.model.Namespace.getNamespaceShowName()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String DEFAULT_NAMESPACE_DESCRIPTION"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.core.namespace.model.Namespace.getNamespaceDesc()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.core.namespace.model.Namespace namespaceA"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.core.namespace.model.Namespace.getNamespaceDesc()"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "FieldRead",
+        "parents": [
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "DEFAULT_NAMESPACE",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "DEFAULT_NAMESPACE_SHOW_NAME",
+          "childCount": 0
+        }
+      },
+      {
+        "type": "Insert",
+        "nodeType": "Invocation",
+        "parents": [
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "assertEquals",
+          "childCount": 2
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        98
+      ]
+    },
+    "aCommitTime": 1730944727,
+    "ID": "alibaba/nacos:9",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.plugin.datasource.impl.derby.HistoryConfigInfoMapperByDerbyTest.testRemoveConfigHistory()",
+    "bSource": {
+      "startLine": 62,
+      "code": "@Test\n    void testRemoveConfigHistory() {\n        MapperResult mapperResult = historyConfigInfoMapperByDerby.removeConfigHistory(context);\n        assertEquals(mapperResult.getSql(),\n                \"DELETE FROM his_config_info WHERE id IN( SELECT id FROM his_config_info WHERE gmt_modified < ? \"\n                        + \"OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY)\");\n        assertArrayEquals(new Object[] {startTime, limitSize}, mapperResult.getParamList().toArray());\n    }"
+    },
+    "aSource": {
+      "startLine": 62,
+      "code": "@Test\n    void testRemoveConfigHistory() {\n        MapperResult mapperResult = historyConfigInfoMapperByDerby.removeConfigHistory(context);\n        assertEquals(mapperResult.getSql(),\n                \"DELETE FROM his_config_info WHERE nid IN( SELECT nid FROM his_config_info WHERE gmt_modified < ? \"\n                        + \"OFFSET 0 ROWS FETCH NEXT ? ROWS ONLY)\");\n        assertArrayEquals(new Object[] {startTime, limitSize}, mapperResult.getParamList().toArray());\n    }"
+    },
+    "bPath": "plugin/datasource/src/test/java/com/alibaba/nacos/plugin/datasource/impl/derby/HistoryConfigInfoMapperByDerbyTest.java",
+    "aPath": "plugin/datasource/src/test/java/com/alibaba/nacos/plugin/datasource/impl/derby/HistoryConfigInfoMapperByDerbyTest.java",
+    "bCommit": "4334cd16c",
+    "aCommit": "e2d44f2fd",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "\"DELETE FROM his_config_info WHERE id IN( SELECT id FROM his_config_info WHERE gmt_modified < ? \"",
+          "type": "DELETE",
+          "lineNo": 66
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "\"DELETE FROM his_config_info WHERE nid IN( SELECT nid FROM his_config_info WHERE gmt_modified < ? \"",
+          "type": "ADD",
+          "lineNo": 66
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'DELETE FROM his_config_info WHERE id IN( SELECT id FROM his_config_info WHERE gmt_modified < ? '"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'DELETE FROM his_config_info WHERE nid IN( SELECT nid FROM his_config_info WHERE gmt_modified < ? '"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Literal",
+        "parents": [
+          "BinaryOperator",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\"DELETE FROM his_config_info WHERE id IN( SELECT id FROM his_config_info WHERE gmt_modified < ? \"",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "\"DELETE FROM his_config_info WHERE nid IN( SELECT nid FROM his_config_info WHERE gmt_modified < ? \"",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "failure",
+      "error_lines": [
+        65
+      ]
+    },
+    "aCommitTime": 1730357654,
+    "ID": "alibaba/nacos:3",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoMapperByMySqlTest.testFindAllConfigInfoBaseFetchRows()",
+    "bSource": {
+      "startLine": 142,
+      "code": "@Test\n    public void testFindAllConfigInfoBaseFetchRows() {\n        MapperResult mapperResult = configInfoMapperByMySql.findAllConfigInfoBaseFetchRows(context);\n        Assert.assertEquals(mapperResult.getSql(),\n                \"SELECT t.id,data_id,group_id,content,md5 FROM ( SELECT id FROM config_info ORDER BY id LIMIT ?,?\"\n                        + \"  )  g, config_info t  WHERE g.id = t.id \");\n        Assert.assertArrayEquals(mapperResult.getParamList().toArray(), emptyObjs);\n    }"
+    },
+    "aSource": {
+      "startLine": 142,
+      "code": "@Test\n    public void testFindAllConfigInfoBaseFetchRows() {\n        MapperResult mapperResult = configInfoMapperByMySql.findAllConfigInfoBaseFetchRows(context);\n        Assert.assertEquals(mapperResult.getSql(),\n                \"SELECT t.id,data_id,group_id,content,md5 FROM ( SELECT id FROM config_info ORDER BY id LIMIT \" + context.getStartRow() + \",\"\n                        + context.getPageSize() + \" ) g, config_info t  WHERE g.id = t.id \");\n        Assert.assertArrayEquals(mapperResult.getParamList().toArray(), emptyObjs);\n    }"
+    },
+    "bPath": "plugin/datasource/src/test/java/com/alibaba/nacos/plugin/datasource/impl/mysql/ConfigInfoMapperByMySqlTest.java",
+    "aPath": "plugin/datasource/src/test/java/com/alibaba/nacos/plugin/datasource/impl/mysql/ConfigInfoMapperByMySqlTest.java",
+    "bCommit": "19a857b70",
+    "aCommit": "facf4c827",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "\"SELECT t.id,data_id,group_id,content,md5 FROM ( SELECT id FROM config_info ORDER BY id LIMIT ?,?\"",
+          "type": "DELETE",
+          "lineNo": 146
+        },
+        {
+          "line": "+ \"  )  g, config_info t  WHERE g.id = t.id \");",
+          "type": "DELETE",
+          "lineNo": 147
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "\"SELECT t.id,data_id,group_id,content,md5 FROM ( SELECT id FROM config_info ORDER BY id LIMIT \" + context.getStartRow() + \",\"",
+          "type": "ADD",
+          "lineNo": 146
+        },
+        {
+          "line": "+ context.getPageSize() + \" ) g, config_info t  WHERE g.id = t.id \");",
+          "type": "ADD",
+          "lineNo": 147
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'SELECT t.id,data_id,group_id,content,md5 FROM ( SELECT id FROM config_info ORDER BY id LIMIT ?,?'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String '  )  g, config_info t  WHERE g.id = t.id '"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'SELECT t.id,data_id,group_id,content,md5 FROM ( SELECT id FROM config_info ORDER BY id LIMIT '"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.getStartRow()"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext context"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.getStartRow()"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String ','"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.getPageSize()"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext context"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.getPageSize()"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String ' ) g, config_info t  WHERE g.id = t.id '"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Literal",
+        "parents": [
+          "BinaryOperator",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\"  )  g, config_info t  WHERE g.id = t.id \"",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "\" ) g, config_info t  WHERE g.id = t.id \"",
+          "childCount": 0
+        }
+      },
+      {
+        "type": "Update",
+        "nodeType": "Literal",
+        "parents": [
+          "BinaryOperator",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\"SELECT t.id,data_id,group_id,content,md5 FROM ( SELECT id FROM config_info ORDER BY id LIMIT ?,?\"",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "\"SELECT t.id,data_id,group_id,content,md5 FROM ( SELECT id FROM config_info ORDER BY id LIMIT \"",
+          "childCount": 0
+        }
+      },
+      {
+        "type": "Insert",
+        "nodeType": "BinaryOperator",
+        "parents": [
+          "BinaryOperator",
+          "Invocation",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "PLUS",
+          "childCount": 2
+        }
+      },
+      {
+        "type": "Move",
+        "nodeType": "Literal",
+        "parents": [
+          "BinaryOperator",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\"SELECT t.id,data_id,group_id,content,md5 FROM ( SELECT id FROM config_info ORDER BY id LIMIT ?,?\"",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "\"SELECT t.id,data_id,group_id,content,md5 FROM ( SELECT id FROM config_info ORDER BY id LIMIT \"",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "failure",
+      "error_lines": [
+        145
+      ]
+    },
+    "aCommitTime": 1712028989,
+    "ID": "alibaba/nacos:4",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.api.remote.response.ErrorResponseTest.testBuildWithNacosException()",
+    "bSource": {
+      "startLine": 48,
+      "code": "@Test\n    public void testBuildWithNacosException() {\n        int errCode = 500;\n        String errMsg = \"nacos exception msg\";\n        NacosException nacosException = new NacosException(errCode, errMsg);\n        \n        Response response = ErrorResponse.build(nacosException);\n        \n        Assert.assertEquals(errCode, response.getErrorCode());\n        Assert.assertEquals(errMsg, response.getMessage());\n    }"
+    },
+    "aSource": {
+      "startLine": 50,
+      "code": "@Test\n    public void testBuildWithNacosException() {\n        int errCode = 500;\n        String errMsg = \"nacos exception msg\";\n        NacosException nacosException = new NacosException(errCode, errMsg);\n        \n        Response response = ErrorResponse.build(nacosException);\n        \n        Assert.assertEquals(errCode, response.getErrorCode());\n        Assert.assertEquals(errCode, response.getResultCode());\n        Assert.assertEquals(errMsg, response.getMessage());\n    }"
+    },
+    "bPath": "api/src/test/java/com/alibaba/nacos/api/remote/response/ErrorResponseTest.java",
+    "aPath": "api/src/test/java/com/alibaba/nacos/api/remote/response/ErrorResponseTest.java",
+    "bCommit": "3a1f0c297",
+    "aCommit": "6461aeb71",
+    "hunk": {
+      "targetChanges": [
+        {
+          "line": "Assert.assertEquals(errCode, response.getResultCode());",
+          "type": "ADD",
+          "lineNo": 59
+        }
+      ],
+      "type": "ADD",
+      "sourceElements": [],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(int,int)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.junit.Assert"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(int,int)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "int errCode"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.api.remote.response.Response.getResultCode()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.api.remote.response.Response response"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.api.remote.response.Response.getResultCode()"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "Invocation",
+        "parents": [
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "assertEquals",
+          "childCount": 3
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "success",
+      "error_lines": null
+    },
+    "aCommitTime": 1711944166,
+    "ID": "alibaba/nacos:6",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.api.remote.response.ErrorResponseTest.testBuildWithNacosRuntimeException()",
+    "bSource": {
+      "startLine": 60,
+      "code": "@Test\n    public void testBuildWithNacosRuntimeException() {\n        int errCode = 500;\n        String errMsg = \"nacos runtime exception msg\";\n        NacosRuntimeException nacosRuntimeException = new NacosRuntimeException(errCode, errMsg);\n        \n        Response response = ErrorResponse.build(nacosRuntimeException);\n        \n        Assert.assertEquals(errCode, response.getErrorCode());\n        Assert.assertEquals(\"errCode: \" + errCode + \", errMsg: \" + errMsg + \" \", response.getMessage());\n    }"
+    },
+    "aSource": {
+      "startLine": 63,
+      "code": "@Test\n    public void testBuildWithNacosRuntimeException() {\n        int errCode = 500;\n        String errMsg = \"nacos runtime exception msg\";\n        NacosRuntimeException nacosRuntimeException = new NacosRuntimeException(errCode, errMsg);\n        \n        Response response = ErrorResponse.build(nacosRuntimeException);\n        \n        Assert.assertEquals(errCode, response.getErrorCode());\n        Assert.assertEquals(errCode, response.getResultCode());\n        Assert.assertEquals(\"errCode: \" + errCode + \", errMsg: \" + errMsg + \" \", response.getMessage());\n    }"
+    },
+    "bPath": "api/src/test/java/com/alibaba/nacos/api/remote/response/ErrorResponseTest.java",
+    "aPath": "api/src/test/java/com/alibaba/nacos/api/remote/response/ErrorResponseTest.java",
+    "bCommit": "3a1f0c297",
+    "aCommit": "6461aeb71",
+    "hunk": {
+      "targetChanges": [
+        {
+          "line": "Assert.assertEquals(errCode, response.getResultCode());",
+          "type": "ADD",
+          "lineNo": 72
+        }
+      ],
+      "type": "ADD",
+      "sourceElements": [],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(int,int)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.junit.Assert"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(int,int)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "int errCode"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.api.remote.response.Response.getResultCode()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.api.remote.response.Response response"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.api.remote.response.Response.getResultCode()"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "Invocation",
+        "parents": [
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "assertEquals",
+          "childCount": 3
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "success",
+      "error_lines": null
+    },
+    "aCommitTime": 1711944166,
+    "ID": "alibaba/nacos:7",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.naming.push.v2.hook.NacosMonitorPushResultHookTest.testPushFailed()",
+    "bSource": {
+      "startLine": 100,
+      "code": "@Test\n    public void testPushFailed() {\n        new NacosMonitorPushResultHook().pushFailed(pushResult);\n        assertEquals(1, MetricsMonitor.getFailedPushMonitor().get());\n    }"
+    },
+    "aSource": {
+      "startLine": 100,
+      "code": "@Test\n    public void testPushFailed() {\n        new NacosMonitorPushResultHook().pushFailed(pushResult);\n        assertEquals(1, MetricsMonitor.getFailedPushMonitor().get());\n        assertEquals(1, MetricsMonitor.getTotalPushMonitor().get());\n    }"
+    },
+    "bPath": "naming/src/test/java/com/alibaba/nacos/naming/push/v2/hook/NacosMonitorPushResultHookTest.java",
+    "aPath": "naming/src/test/java/com/alibaba/nacos/naming/push/v2/hook/NacosMonitorPushResultHookTest.java",
+    "bCommit": "9d473ef60",
+    "aCommit": "1b9a22c1a",
+    "hunk": {
+      "targetChanges": [
+        {
+          "line": "assertEquals(1, MetricsMonitor.getTotalPushMonitor().get());",
+          "type": "ADD",
+          "lineNo": 104
+        }
+      ],
+      "type": "ADD",
+      "sourceElements": [],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(int,int)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(int,int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '1'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "java.util.concurrent.atomic.AtomicInteger.get()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.naming.monitor.MetricsMonitor.getTotalPushMonitor()"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.naming.monitor.MetricsMonitor"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.naming.monitor.MetricsMonitor.getTotalPushMonitor()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "java.util.concurrent.atomic.AtomicInteger.get()"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "Invocation",
+        "parents": [
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "assertEquals",
+          "childCount": 2
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "success",
+      "error_lines": null
+    },
+    "aCommitTime": 1706668021,
+    "ID": "alibaba/nacos:8",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoMapperByMySqlTest.testFindChangeConfigFetchRows()",
+    "bSource": {
+      "startLine": 177,
+      "code": "@Test\n    public void testFindChangeConfigFetchRows() {\n        Object lastMaxId = 100;\n        context.putWhereParameter(FieldConstant.LAST_MAX_ID, lastMaxId);\n        MapperResult mapperResult = configInfoMapperByMySql.findChangeConfigFetchRows(context);\n        Assert.assertEquals(mapperResult.getSql(),\n                \"SELECT id,data_id,group_id,tenant_id,app_name,content,type,md5,gmt_modified FROM config_info \"\n                        + \"WHERE  1=1  AND tenant_id = ?  AND app_name = ?  AND gmt_modified >=?  AND gmt_modified <=?  AND id > \"\n                        + lastMaxId + \" ORDER BY id ASC LIMIT \" + startRow + \",\" + pageSize);\n        Assert.assertArrayEquals(mapperResult.getParamList().toArray(),\n                new Object[] {tenantId, appName, startTime, endTime});\n    }"
+    },
+    "aSource": {
+      "startLine": 177,
+      "code": "@Test\n    public void testFindChangeConfigFetchRows() {\n        Object lastMaxId = 100;\n        context.putWhereParameter(FieldConstant.LAST_MAX_ID, lastMaxId);\n        MapperResult mapperResult = configInfoMapperByMySql.findChangeConfigFetchRows(context);\n        Assert.assertEquals(mapperResult.getSql(),\n                \"SELECT id,data_id,group_id,tenant_id,app_name,type,md5,gmt_modified FROM config_info \"\n                        + \"WHERE  1=1  AND tenant_id = ?  AND app_name = ?  AND gmt_modified >=?  AND gmt_modified <=?  AND id > \"\n                        + lastMaxId + \" ORDER BY id ASC LIMIT \" + startRow + \",\" + pageSize);\n        Assert.assertArrayEquals(mapperResult.getParamList().toArray(),\n                new Object[] {tenantId, appName, startTime, endTime});\n    }"
+    },
+    "bPath": "plugin/datasource/src/test/java/com/alibaba/nacos/plugin/datasource/impl/mysql/ConfigInfoMapperByMySqlTest.java",
+    "aPath": "plugin/datasource/src/test/java/com/alibaba/nacos/plugin/datasource/impl/mysql/ConfigInfoMapperByMySqlTest.java",
+    "bCommit": "ab2ddac06",
+    "aCommit": "790bb197c",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "\"SELECT id,data_id,group_id,tenant_id,app_name,content,type,md5,gmt_modified FROM config_info \"",
+          "type": "DELETE",
+          "lineNo": 183
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "\"SELECT id,data_id,group_id,tenant_id,app_name,type,md5,gmt_modified FROM config_info \"",
+          "type": "ADD",
+          "lineNo": 183
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'SELECT id,data_id,group_id,tenant_id,app_name,content,type,md5,gmt_modified FROM config_info '"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'SELECT id,data_id,group_id,tenant_id,app_name,type,md5,gmt_modified FROM config_info '"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Literal",
+        "parents": [
+          "BinaryOperator",
+          "BinaryOperator",
+          "BinaryOperator",
+          "BinaryOperator",
+          "BinaryOperator",
+          "BinaryOperator",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\"SELECT id,data_id,group_id,tenant_id,app_name,content,type,md5,gmt_modified FROM config_info \"",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "\"SELECT id,data_id,group_id,tenant_id,app_name,type,md5,gmt_modified FROM config_info \"",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "failure",
+      "error_lines": [
+        182
+      ]
+    },
+    "aCommitTime": 1702878087,
+    "ID": "alibaba/nacos:1",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.plugin.auth.impl.token.impl.JwtTokenManagerTest.testCreateTokenWhenDisableAuth()",
+    "bSource": {
+      "startLine": 109,
+      "code": "@Test\n    public void testCreateTokenWhenDisableAuth() {\n        when(authConfigs.isAuthEnabled()).thenReturn(false);\n        jwtTokenManager = new JwtTokenManager(authConfigs);\n        assertEquals(\"\", jwtTokenManager.createToken(\"nacos\"));\n    }"
+    },
+    "aSource": {
+      "startLine": 109,
+      "code": "@Test\n    public void testCreateTokenWhenDisableAuth() {\n        when(authConfigs.isAuthEnabled()).thenReturn(false);\n        jwtTokenManager = new JwtTokenManager(authConfigs);\n        assertEquals(\"AUTH_DISABLED\", jwtTokenManager.createToken(\"nacos\"));\n    }"
+    },
+    "bPath": "plugin-default-impl/nacos-default-auth-plugin/src/test/java/com/alibaba/nacos/plugin/auth/impl/token/impl/JwtTokenManagerTest.java",
+    "aPath": "plugin-default-impl/nacos-default-auth-plugin/src/test/java/com/alibaba/nacos/plugin/auth/impl/token/impl/JwtTokenManagerTest.java",
+    "bCommit": "26d045ca4",
+    "aCommit": "a3420b733",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "assertEquals(\"\", jwtTokenManager.createToken(\"nacos\"));",
+          "type": "DELETE",
+          "lineNo": 113
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "assertEquals(\"AUTH_DISABLED\", jwtTokenManager.createToken(\"nacos\"));",
+          "type": "ADD",
+          "lineNo": 113
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String ''"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.auth.impl.token.impl.JwtTokenManager.createToken(String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.plugin.auth.impl.token.impl.JwtTokenManager jwtTokenManager"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.auth.impl.token.impl.JwtTokenManager.createToken(String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'nacos'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertEquals(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'AUTH_DISABLED'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.auth.impl.token.impl.JwtTokenManager.createToken(String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.plugin.auth.impl.token.impl.JwtTokenManager jwtTokenManager"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.auth.impl.token.impl.JwtTokenManager.createToken(String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'nacos'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Literal",
+        "parents": [
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\"\"",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "\"AUTH_DISABLED\"",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "failure",
+      "error_lines": [
+        113
+      ]
+    },
+    "aCommitTime": 1702361636,
+    "ID": "alibaba/nacos:11",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.plugin.auth.impl.persistence.EmbeddedPermissionPersistServiceImplTest.testDeletePermission()",
+    "bSource": {
+      "startLine": 80,
+      "code": "@Test\n    public void testDeletePermission() {\n        embeddedPermissionPersistService.deletePermission(\"role\", \"resource\", \"action\");\n        List<ModifyRequest> currentSqlContext = EmbeddedStorageContextUtils.getCurrentSqlContext();\n        \n        Mockito.verify(databaseOperate).blockUpdate();\n    }"
+    },
+    "aSource": {
+      "startLine": 80,
+      "code": "@Test\n    public void testDeletePermission() {\n        embeddedPermissionPersistService.deletePermission(\"role\", \"resource\", \"action\");\n        List<ModifyRequest> currentSqlContext = EmbeddedStorageContextHolder.getCurrentSqlContext();\n        \n        Mockito.verify(databaseOperate).blockUpdate();\n    }"
+    },
+    "bPath": "plugin-default-impl/src/test/java/com/alibaba/nacos/plugin/auth/impl/persistence/EmbeddedPermissionPersistServiceImplTest.java",
+    "aPath": "plugin-default-impl/src/test/java/com/alibaba/nacos/plugin/auth/impl/persistence/EmbeddedPermissionPersistServiceImplTest.java",
+    "bCommit": "11fc4792c",
+    "aCommit": "6acabeca6",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "List<ModifyRequest> currentSqlContext = EmbeddedStorageContextUtils.getCurrentSqlContext();",
+          "type": "DELETE",
+          "lineNo": 83
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "List<ModifyRequest> currentSqlContext = EmbeddedStorageContextHolder.getCurrentSqlContext();",
+          "type": "ADD",
+          "lineNo": 83
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "java.util.List currentSqlContext"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "java.util.List"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.alibaba.nacos.config.server.service.sql.ModifyRequest"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.config.server.service.sql.EmbeddedStorageContextUtils.getCurrentSqlContext()"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.config.server.service.sql.EmbeddedStorageContextUtils"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.config.server.service.sql.EmbeddedStorageContextUtils.getCurrentSqlContext()"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "java.util.List currentSqlContext"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "java.util.List"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.alibaba.nacos.persistence.repository.embedded.ModifyRequest"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.persistence.repository.embedded.EmbeddedStorageContextHolder.getCurrentSqlContext()"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.persistence.repository.embedded.EmbeddedStorageContextHolder"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.persistence.repository.embedded.EmbeddedStorageContextHolder.getCurrentSqlContext()"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "TYPE_ARGUMENT",
+        "parents": [
+          "VARIABLE_TYPE",
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "com.alibaba.nacos.config.server.service.sql.ModifyRequest",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "com.alibaba.nacos.persistence.repository.embedded.ModifyRequest",
+          "childCount": 0
+        }
+      },
+      {
+        "type": "Update",
+        "nodeType": "TypeAccess",
+        "parents": [
+          "Invocation",
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "com.alibaba.nacos.config.server.service.sql.EmbeddedStorageContextUtils",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "com.alibaba.nacos.persistence.repository.embedded.EmbeddedStorageContextHolder",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        83
+      ]
+    },
+    "aCommitTime": 1682242634,
+    "ID": "alibaba/nacos:13",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.plugin.auth.impl.persistence.EmbeddedRolePersistServiceImplTest.testDeleteRole()",
+    "bSource": {
+      "startLine": 87,
+      "code": "@Test\n    public void testDeleteRole() {\n        embeddedRolePersistService.deleteRole(\"role\");\n        embeddedRolePersistService.deleteRole(\"role\", \"userName\");\n        \n        List<ModifyRequest> currentSqlContext = EmbeddedStorageContextUtils.getCurrentSqlContext();\n        \n        Assert.assertEquals(currentSqlContext.size(), 0);\n    }"
+    },
+    "aSource": {
+      "startLine": 87,
+      "code": "@Test\n    public void testDeleteRole() {\n        embeddedRolePersistService.deleteRole(\"role\");\n        embeddedRolePersistService.deleteRole(\"role\", \"userName\");\n        \n        List<ModifyRequest> currentSqlContext = EmbeddedStorageContextHolder.getCurrentSqlContext();\n        \n        Assert.assertEquals(currentSqlContext.size(), 0);\n    }"
+    },
+    "bPath": "plugin-default-impl/src/test/java/com/alibaba/nacos/plugin/auth/impl/persistence/EmbeddedRolePersistServiceImplTest.java",
+    "aPath": "plugin-default-impl/src/test/java/com/alibaba/nacos/plugin/auth/impl/persistence/EmbeddedRolePersistServiceImplTest.java",
+    "bCommit": "11fc4792c",
+    "aCommit": "6acabeca6",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "List<ModifyRequest> currentSqlContext = EmbeddedStorageContextUtils.getCurrentSqlContext();",
+          "type": "DELETE",
+          "lineNo": 92
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "List<ModifyRequest> currentSqlContext = EmbeddedStorageContextHolder.getCurrentSqlContext();",
+          "type": "ADD",
+          "lineNo": 92
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "java.util.List currentSqlContext"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "java.util.List"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.alibaba.nacos.config.server.service.sql.ModifyRequest"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.config.server.service.sql.EmbeddedStorageContextUtils.getCurrentSqlContext()"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.config.server.service.sql.EmbeddedStorageContextUtils"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.config.server.service.sql.EmbeddedStorageContextUtils.getCurrentSqlContext()"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "java.util.List currentSqlContext"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "java.util.List"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.alibaba.nacos.persistence.repository.embedded.ModifyRequest"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.persistence.repository.embedded.EmbeddedStorageContextHolder.getCurrentSqlContext()"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.persistence.repository.embedded.EmbeddedStorageContextHolder"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.persistence.repository.embedded.EmbeddedStorageContextHolder.getCurrentSqlContext()"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "TYPE_ARGUMENT",
+        "parents": [
+          "VARIABLE_TYPE",
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "com.alibaba.nacos.config.server.service.sql.ModifyRequest",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "com.alibaba.nacos.persistence.repository.embedded.ModifyRequest",
+          "childCount": 0
+        }
+      },
+      {
+        "type": "Update",
+        "nodeType": "TypeAccess",
+        "parents": [
+          "Invocation",
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "com.alibaba.nacos.config.server.service.sql.EmbeddedStorageContextUtils",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "com.alibaba.nacos.persistence.repository.embedded.EmbeddedStorageContextHolder",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        92
+      ]
+    },
+    "aCommitTime": 1682242634,
+    "ID": "alibaba/nacos:14",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.console.controller.NamespaceControllerTest.testGetNamespaceByNamespaceId()",
+    "bSource": {
+      "startLine": 72,
+      "code": "@Test\n    public void testGetNamespaceByNamespaceId() throws Exception {\n        NamespaceAllInfo namespace = new NamespaceAllInfo(\"\", \"public\", 0, 0, 0, \"\");\n        when(namespaceOperationService.getNamespace(\"\")).thenReturn(namespace);\n        assertEquals(namespace, namespaceController.getNamespace(\"\"));\n    }"
+    },
+    "aSource": {
+      "startLine": 71,
+      "code": "@Test\n    public void testGetNamespaceByNamespaceId() throws Exception {\n        Namespace namespace = new Namespace(\"\", \"public\", \"\", 0, 0, 0);\n        when(namespaceOperationService.getNamespace(\"\")).thenReturn(namespace);\n        assertEquals(namespace, namespaceController.getNamespace(\"\"));\n    }"
+    },
+    "bPath": "console/src/test/java/com/alibaba/nacos/console/controller/NamespaceControllerTest.java",
+    "aPath": "console/src/test/java/com/alibaba/nacos/console/controller/NamespaceControllerTest.java",
+    "bCommit": "f83061f47",
+    "aCommit": "aa6144aa8",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "NamespaceAllInfo namespace = new NamespaceAllInfo(\"\", \"public\", 0, 0, 0, \"\");",
+          "type": "DELETE",
+          "lineNo": 74
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "Namespace namespace = new Namespace(\"\", \"public\", \"\", 0, 0, 0);",
+          "type": "ADD",
+          "lineNo": 73
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "com.alibaba.nacos.console.model.NamespaceAllInfo namespace"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.alibaba.nacos.console.model.NamespaceAllInfo"
+        },
+        {
+          "type": "CtConstructorCall",
+          "value": "com.alibaba.nacos.console.model.NamespaceAllInfo.NamespaceAllInfo(String,String,int,int,int,String)"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.alibaba.nacos.console.model.NamespaceAllInfo"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String ''"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'public'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String ''"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "com.alibaba.nacos.console.model.Namespace namespace"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.alibaba.nacos.console.model.Namespace"
+        },
+        {
+          "type": "CtConstructorCall",
+          "value": "com.alibaba.nacos.console.model.Namespace.Namespace(String,String,String,int,int,int)"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.alibaba.nacos.console.model.Namespace"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String ''"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'public'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String ''"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "VARIABLE_TYPE",
+        "parents": [
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "com.alibaba.nacos.console.model.NamespaceAllInfo",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "com.alibaba.nacos.console.model.Namespace",
+          "childCount": 0
+        }
+      },
+      {
+        "type": "Update",
+        "nodeType": "ConstructorCall",
+        "parents": [
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "com.alibaba.nacos.console.model.NamespaceAllInfo(java.lang.String,java.lang.String,int,int,int,java.lang.String)",
+          "childCount": 6
+        },
+        "dstNode": {
+          "label": "com.alibaba.nacos.console.model.Namespace(java.lang.String,java.lang.String,java.lang.String,int,int,int)",
+          "childCount": 6
+        }
+      }
+    ],
+    "refactorings": [
+      "CHANGE_VARIABLE_TYPE"
+    ],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        73
+      ]
+    },
+    "aCommitTime": 1682239127,
+    "ID": "alibaba/nacos:15",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoAggrMapperByMySqlTest.testFindConfigInfoAggrByPageFetchRows()",
+    "bSource": {
+      "startLine": 115,
+      "code": "@Test\n    public void testFindConfigInfoAggrByPageFetchRows() {\n        String dataId = \"data-id\";\n        String groupId = \"group-id\";\n        String tenantId = \"tenant-id\";\n        Integer startRow = 0;\n        Integer pageSize = 5;\n        \n        MapperContext context = new MapperContext();\n        context.put(\"data_id\", dataId);\n        context.put(\"group_id\", groupId);\n        context.put(\"tenant_id\", tenantId);\n        context.put(\"startRow\", startRow);\n        context.put(\"pageSize\", pageSize);\n        \n        MapperResult mapperResult = configInfoAggrMapperByMySql.findConfigInfoAggrByPageFetchRows(context);\n        String sql = mapperResult.getSql();\n        List<Object> paramList = mapperResult.getParamList();\n        \n        Assert.assertEquals(sql,\n                \"SELECT data_id,group_id,tenant_id,datum_id,app_name,content FROM config_info_aggr WHERE \"\n                        + \"data_id= ? AND group_id= ? AND tenant_id= ? ORDER BY datum_id LIMIT 0,5\");\n        Assert.assertEquals(paramList, Arrays.asList(dataId, groupId, tenantId));\n    }"
+    },
+    "aSource": {
+      "startLine": 115,
+      "code": "@Test\n    public void testFindConfigInfoAggrByPageFetchRows() {\n        String dataId = \"data-id\";\n        String groupId = \"group-id\";\n        String tenantId = \"tenant-id\";\n        Integer startRow = 0;\n        Integer pageSize = 5;\n        \n        MapperContext context = new MapperContext();\n        context.putWhereParameter(\"data_id\", dataId);\n        context.putWhereParameter(\"group_id\", groupId);\n        context.putWhereParameter(\"tenant_id\", tenantId);\n        context.putWhereParameter(\"startRow\", startRow);\n        context.putWhereParameter(\"pageSize\", pageSize);\n        \n        MapperResult mapperResult = configInfoAggrMapperByMySql.findConfigInfoAggrByPageFetchRows(context);\n        String sql = mapperResult.getSql();\n        List<Object> paramList = mapperResult.getParamList();\n        \n        Assert.assertEquals(sql,\n                \"SELECT data_id,group_id,tenant_id,datum_id,app_name,content FROM config_info_aggr WHERE \"\n                        + \"data_id= ? AND group_id= ? AND tenant_id= ? ORDER BY datum_id LIMIT 0,5\");\n        Assert.assertEquals(paramList, Arrays.asList(dataId, groupId, tenantId));\n    }"
+    },
+    "bPath": "plugin/datasource/src/test/java/com/alibaba/nacos/plugin/datasource/impl/mysql/ConfigInfoAggrMapperByMySqlTest.java",
+    "aPath": "plugin/datasource/src/test/java/com/alibaba/nacos/plugin/datasource/impl/mysql/ConfigInfoAggrMapperByMySqlTest.java",
+    "bCommit": "4e78a769e",
+    "aCommit": "d16023c15",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "context.put(\"data_id\", dataId);",
+          "type": "DELETE",
+          "lineNo": 124
+        },
+        {
+          "line": "context.put(\"group_id\", groupId);",
+          "type": "DELETE",
+          "lineNo": 125
+        },
+        {
+          "line": "context.put(\"tenant_id\", tenantId);",
+          "type": "DELETE",
+          "lineNo": 126
+        },
+        {
+          "line": "context.put(\"startRow\", startRow);",
+          "type": "DELETE",
+          "lineNo": 127
+        },
+        {
+          "line": "context.put(\"pageSize\", pageSize);",
+          "type": "DELETE",
+          "lineNo": 128
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "context.putWhereParameter(\"data_id\", dataId);",
+          "type": "ADD",
+          "lineNo": 124
+        },
+        {
+          "line": "context.putWhereParameter(\"group_id\", groupId);",
+          "type": "ADD",
+          "lineNo": 125
+        },
+        {
+          "line": "context.putWhereParameter(\"tenant_id\", tenantId);",
+          "type": "ADD",
+          "lineNo": 126
+        },
+        {
+          "line": "context.putWhereParameter(\"startRow\", startRow);",
+          "type": "ADD",
+          "lineNo": 127
+        },
+        {
+          "line": "context.putWhereParameter(\"pageSize\", pageSize);",
+          "type": "ADD",
+          "lineNo": 128
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.put(String,Object)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext context"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.put(String,Object)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'data_id'"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String dataId"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.put(String,Object)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext context"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.put(String,Object)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'group_id'"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String groupId"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.put(String,Object)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext context"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.put(String,Object)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'tenant_id'"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String tenantId"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.put(String,Object)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext context"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.put(String,Object)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'startRow'"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.Integer startRow"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.put(String,Object)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext context"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.put(String,Object)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'pageSize'"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.Integer pageSize"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.putWhereParameter(String,Object)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext context"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.putWhereParameter(String,Object)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'data_id'"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String dataId"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.putWhereParameter(String,Object)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext context"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.putWhereParameter(String,Object)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'group_id'"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String groupId"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.putWhereParameter(String,Object)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext context"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.putWhereParameter(String,Object)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'tenant_id'"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.String tenantId"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.putWhereParameter(String,Object)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext context"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.putWhereParameter(String,Object)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'startRow'"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.Integer startRow"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.putWhereParameter(String,Object)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext context"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.plugin.datasource.model.MapperContext.putWhereParameter(String,Object)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'pageSize'"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.lang.Integer pageSize"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "put",
+          "childCount": 3
+        },
+        "dstNode": {
+          "label": "putWhereParameter",
+          "childCount": 3
+        }
+      },
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "put",
+          "childCount": 3
+        },
+        "dstNode": {
+          "label": "putWhereParameter",
+          "childCount": 3
+        }
+      },
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "put",
+          "childCount": 3
+        },
+        "dstNode": {
+          "label": "putWhereParameter",
+          "childCount": 3
+        }
+      },
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "put",
+          "childCount": 3
+        },
+        "dstNode": {
+          "label": "putWhereParameter",
+          "childCount": 3
+        }
+      },
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "put",
+          "childCount": 3
+        },
+        "dstNode": {
+          "label": "putWhereParameter",
+          "childCount": 3
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        124,
+        125,
+        126,
+        127,
+        128
+      ]
+    },
+    "aCommitTime": 1676858650,
+    "ID": "alibaba/nacos:2",
+    "trivial": [
+      "RENAME_METHOD"
+    ]
+  },
+  {
+    "name": "com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoServiceTest.testRemoveSubscriberForRedo()",
+    "bSource": {
+      "startLine": 218,
+      "code": "@Test\n    public void testRemoveSubscriberForRedo() {\n        ConcurrentMap<String, SubscriberRedoData> subscribes = getSubscriberRedoDataMap();\n        assertTrue(subscribes.isEmpty());\n        redoService.cacheSubscriberForRedo(SERVICE, GROUP, CLUSTER);\n        assertFalse(subscribes.isEmpty());\n        redoService.removeSubscriberForRedo(SERVICE, GROUP, CLUSTER);\n        assertTrue(subscribes.isEmpty());\n    }"
+    },
+    "aSource": {
+      "startLine": 219,
+      "code": "@Test\n    public void testRemoveSubscriberForRedo() {\n        ConcurrentMap<String, SubscriberRedoData> subscribes = getSubscriberRedoDataMap();\n        assertTrue(subscribes.isEmpty());\n        redoService.cacheSubscriberForRedo(SERVICE, GROUP, CLUSTER);\n        assertFalse(subscribes.isEmpty());\n        redoService.subscriberDeregister(SERVICE, GROUP, CLUSTER);\n        redoService.removeSubscriberForRedo(SERVICE, GROUP, CLUSTER);\n        assertTrue(subscribes.isEmpty());\n    }"
+    },
+    "bPath": "client/src/test/java/com/alibaba/nacos/client/naming/remote/gprc/redo/NamingGrpcRedoServiceTest.java",
+    "aPath": "client/src/test/java/com/alibaba/nacos/client/naming/remote/gprc/redo/NamingGrpcRedoServiceTest.java",
+    "bCommit": "428e0bc66",
+    "aCommit": "30954dc61",
+    "hunk": {
+      "targetChanges": [
+        {
+          "line": "redoService.subscriberDeregister(SERVICE, GROUP, CLUSTER);",
+          "type": "ADD",
+          "lineNo": 225
+        }
+      ],
+      "type": "ADD",
+      "sourceElements": [],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService.subscriberDeregister(String,String,String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService redoService"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService.subscriberDeregister(String,String,String)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String SERVICE"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String GROUP"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String CLUSTER"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "Invocation",
+        "parents": [
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "subscriberDeregister",
+          "childCount": 4
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "failure",
+      "error_lines": [
+        226
+      ]
+    },
+    "aCommitTime": 1675820317,
+    "ID": "alibaba/nacos:5",
+    "trivial": null
+  },
+  {
+    "name": "com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoMapperByMySqlTest.testGetTenantIdList()",
+    "bSource": {
+      "startLine": 69,
+      "code": "@Test\n    public void testGetTenantIdList() {\n        String sql = configInfoMapperByMySql.getTenantIdList(0, 5);\n        Assert.assertEquals(sql,\n                \"SELECT tenant_id FROM config_info WHERE tenant_id != '' GROUP BY tenant_id LIMIT 0,5\");\n    }"
+    },
+    "aSource": {
+      "startLine": 70,
+      "code": "@Test\n    public void testGetTenantIdList() {\n        String sql = configInfoMapperByMySql.getTenantIdList(0, 5);\n        Assert.assertEquals(sql,\n                \"SELECT tenant_id FROM config_info WHERE tenant_id != '\"\n                        + NamespaceUtil.getNamespaceDefaultId() + \"' GROUP BY tenant_id LIMIT 0,5\");\n    }"
+    },
+    "bPath": "plugin/datasource/src/test/java/com/alibaba/nacos/plugin/datasource/impl/mysql/ConfigInfoMapperByMySqlTest.java",
+    "aPath": "plugin/datasource/src/test/java/com/alibaba/nacos/plugin/datasource/impl/mysql/ConfigInfoMapperByMySqlTest.java",
+    "bCommit": "4fa126f7f",
+    "aCommit": "41f03fea0",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "\"SELECT tenant_id FROM config_info WHERE tenant_id != '' GROUP BY tenant_id LIMIT 0,5\");",
+          "type": "DELETE",
+          "lineNo": 73
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "\"SELECT tenant_id FROM config_info WHERE tenant_id != '\"",
+          "type": "ADD",
+          "lineNo": 74
+        },
+        {
+          "line": "+ NamespaceUtil.getNamespaceDefaultId() + \"' GROUP BY tenant_id LIMIT 0,5\");",
+          "type": "ADD",
+          "lineNo": 75
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'SELECT tenant_id FROM config_info WHERE tenant_id != '' GROUP BY tenant_id LIMIT 0,5'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'SELECT tenant_id FROM config_info WHERE tenant_id != ''"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.alibaba.nacos.common.utils.NamespaceUtil.getNamespaceDefaultId()"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.alibaba.nacos.common.utils.NamespaceUtil"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.alibaba.nacos.common.utils.NamespaceUtil.getNamespaceDefaultId()"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String '' GROUP BY tenant_id LIMIT 0,5'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Literal",
+        "parents": [
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\"SELECT tenant_id FROM config_info WHERE tenant_id != '' GROUP BY tenant_id LIMIT 0,5\"",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "\"SELECT tenant_id FROM config_info WHERE tenant_id != '\"",
+          "childCount": 0
+        }
+      },
+      {
+        "type": "Insert",
+        "nodeType": "BinaryOperator",
+        "parents": [
+          "Invocation",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "PLUS",
+          "childCount": 2
+        }
+      },
+      {
+        "type": "Move",
+        "nodeType": "Literal",
+        "parents": [
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "\"SELECT tenant_id FROM config_info WHERE tenant_id != '' GROUP BY tenant_id LIMIT 0,5\"",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "\"SELECT tenant_id FROM config_info WHERE tenant_id != '\"",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "success",
+      "error_lines": null
+    },
+    "aCommitTime": 1673856869,
+    "ID": "alibaba/nacos:0",
+    "trivial": null
+  }
+]

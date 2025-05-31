@@ -1,0 +1,2538 @@
+[
+  {
+    "name": "org.prebid.server.bidder.ucfunnel.UcfunnelBidderTest.makeHttpRequestsShouldCreateCorrectURL()",
+    "bSource": {
+      "startLine": 93,
+      "code": "@Test\n    public void makeHttpRequestsShouldCreateCorrectURL() {\n        // given\n        final BidRequest bidRequest = BidRequest.builder()\n                .imp(singletonList(Imp.builder()\n                        .id(\"123\")\n                        .ext(mapper.valueToTree(ExtPrebid.of(null,\n                                ExtImpUcfunnel.of(\"adUnitId\", \"partnerId\")))).build()))\n                .build();\n\n        // when\n        final Result<List<HttpRequest<BidRequest>>> result = target.makeHttpRequests(bidRequest);\n\n        // then\n        assertThat(result.getErrors()).isEmpty();\n        assertThat(result.getValue()).hasSize(1);\n        assertThat(result.getValue().get(0).getUri()).isEqualTo(\"https://test.endpoint.com/partnerId/request\");\n    }"
+    },
+    "aSource": {
+      "startLine": 93,
+      "code": "@Test\n    public void makeHttpRequestsShouldCreateCorrectURL() {\n        // given\n        final BidRequest bidRequest = BidRequest.builder()\n                .imp(singletonList(Imp.builder()\n                        .id(\"123\")\n                        .ext(mapper.valueToTree(ExtPrebid.of(null,\n                                ExtImpUcfunnel.of(\"adUnitId\", \"partnerId\")))).build()))\n                .build();\n\n        // when\n        final Result<List<HttpRequest<BidRequest>>> result = target.makeHttpRequests(bidRequest);\n\n        // then\n        assertThat(result.getErrors()).isEmpty();\n        assertThat(result.getValue()).hasSize(1);\n        assertThat(result.getValue().getFirst().getUri()).isEqualTo(\"https://test.endpoint.com/partnerId/request\");\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/bidder/ucfunnel/UcfunnelBidderTest.java",
+    "aPath": "src/test/java/org/prebid/server/bidder/ucfunnel/UcfunnelBidderTest.java",
+    "bCommit": "e02e0942f",
+    "aCommit": "edd4dd17c",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "@Test",
+          "type": "DELETE",
+          "lineNo": 93
+        },
+        {
+          "line": "public void makeHttpRequestsShouldCreateCorrectURL() {",
+          "type": "DELETE",
+          "lineNo": 94
+        },
+        {
+          "line": "// given",
+          "type": "DELETE",
+          "lineNo": 95
+        },
+        {
+          "line": "final BidRequest bidRequest = BidRequest.builder()",
+          "type": "DELETE",
+          "lineNo": 96
+        },
+        {
+          "line": ".imp(singletonList(Imp.builder()",
+          "type": "DELETE",
+          "lineNo": 97
+        },
+        {
+          "line": ".id(\"123\")",
+          "type": "DELETE",
+          "lineNo": 98
+        },
+        {
+          "line": ".ext(mapper.valueToTree(ExtPrebid.of(null,",
+          "type": "DELETE",
+          "lineNo": 99
+        },
+        {
+          "line": "ExtImpUcfunnel.of(\"adUnitId\", \"partnerId\")))).build()))",
+          "type": "DELETE",
+          "lineNo": 100
+        },
+        {
+          "line": ".build();",
+          "type": "DELETE",
+          "lineNo": 101
+        },
+        {
+          "line": "// when",
+          "type": "DELETE",
+          "lineNo": 103
+        },
+        {
+          "line": "final Result<List<HttpRequest<BidRequest>>> result = target.makeHttpRequests(bidRequest);",
+          "type": "DELETE",
+          "lineNo": 104
+        },
+        {
+          "line": "// then",
+          "type": "DELETE",
+          "lineNo": 106
+        },
+        {
+          "line": "assertThat(result.getErrors()).isEmpty();",
+          "type": "DELETE",
+          "lineNo": 107
+        },
+        {
+          "line": "assertThat(result.getValue()).hasSize(1);",
+          "type": "DELETE",
+          "lineNo": 108
+        },
+        {
+          "line": "assertThat(result.getValue().get(0).getUri()).isEqualTo(\"https://test.endpoint.com/partnerId/request\");",
+          "type": "DELETE",
+          "lineNo": 109
+        },
+        {
+          "line": "}",
+          "type": "DELETE",
+          "lineNo": 110
+        }
+      ],
+      "type": "DELETE",
+      "sourceElements": [
+        {
+          "type": "CtMethod",
+          "value": "org.prebid.server.bidder.ucfunnel.UcfunnelBidderTest.makeHttpRequestsShouldCreateCorrectURL()"
+        },
+        {
+          "type": "CtAnnotation",
+          "value": "org.junit.Test"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "void"
+        },
+        {
+          "type": "CtLocalVariable",
+          "value": "com.iab.openrtb.request.BidRequest bidRequest"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.iab.openrtb.request.BidRequest"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "build()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "imp()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "builder()"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.iab.openrtb.request.BidRequest"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "builder()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "imp()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "java.util.Collections.singletonList(Object)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "java.util.Collections.singletonList(Object)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "build()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "ext()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "id(java.lang.String)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "builder()"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "com.iab.openrtb.request.Imp"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "builder()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "id(java.lang.String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String '123'"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "ext()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.fasterxml.jackson.databind.ObjectMapper.valueToTree(Object)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.fasterxml.jackson.databind.ObjectMapper mapper"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.fasterxml.jackson.databind.ObjectMapper.valueToTree(Object)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.proto.openrtb.ext.ExtPrebid.of(Object,Object)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.proto.openrtb.ext.ExtPrebid"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.proto.openrtb.ext.ExtPrebid.of(Object,Object)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "of(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.proto.openrtb.ext.request.ucfunnel.ExtImpUcfunnel"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "of(java.lang.String,java.lang.String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'adUnitId'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'partnerId'"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "build()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "build()"
+        },
+        {
+          "type": "CtLocalVariable",
+          "value": "org.prebid.server.bidder.model.Result result"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "org.prebid.server.bidder.model.Result"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "java.util.List"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "org.prebid.server.bidder.model.HttpRequest"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.iab.openrtb.request.BidRequest"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.bidder.ucfunnel.UcfunnelBidder.makeHttpRequests(BidRequest)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "org.prebid.server.bidder.ucfunnel.UcfunnelBidder target"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.bidder.ucfunnel.UcfunnelBidder.makeHttpRequests(BidRequest)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.iab.openrtb.request.BidRequest bidRequest"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "isEmpty()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "getErrors()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "org.prebid.server.bidder.model.Result result"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "getErrors()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "isEmpty()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "hasSize(int)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "getValue()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "org.prebid.server.bidder.model.Result result"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "getValue()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "hasSize(int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '1'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "isEqualTo(java.lang.String)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "getUri()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "get(int)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "getValue()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "org.prebid.server.bidder.model.Result result"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "getValue()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "get(int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "getUri()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "isEqualTo(java.lang.String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'https://test.endpoint.com/partnerId/request'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "get",
+          "childCount": 2
+        },
+        "dstNode": {
+          "label": "getFirst",
+          "childCount": 1
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "success",
+      "error_lines": null
+    },
+    "aCommitTime": 1716983520,
+    "ID": "prebid/prebid-server-java:5",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.bidder.adpone.AdponeBidderTest.makeHttpRequestsShouldReturnErrorIfFirstImpExtCannotBeParsed()",
+    "bSource": {
+      "startLine": 41,
+      "code": "@Test\n    public void makeHttpRequestsShouldReturnErrorIfFirstImpExtCannotBeParsed() {\n        // given\n        final BidRequest bidRequest = givenBidRequest(mapper.createArrayNode());\n\n        // when\n        final Result<List<HttpRequest<BidRequest>>> result = target.makeHttpRequests(bidRequest);\n\n        // then\n        assertThat(result.getValue()).isEmpty();\n\n        final List<BidderError> errors = result.getErrors();\n        assertThat(errors).hasSize(1);\n        assertThat(errors.get(0).getMessage()).startsWith(\"Cannot deserialize value\");\n    }"
+    },
+    "aSource": {
+      "startLine": 41,
+      "code": "@Test\n    public void makeHttpRequestsShouldReturnErrorIfFirstImpExtCannotBeParsed() {\n        // given\n        final BidRequest bidRequest = givenBidRequest(mapper.createArrayNode());\n\n        // when\n        final Result<List<HttpRequest<BidRequest>>> result = target.makeHttpRequests(bidRequest);\n\n        // then\n        assertThat(result.getValue()).isEmpty();\n\n        final List<BidderError> errors = result.getErrors();\n        assertThat(errors).hasSize(1);\n        assertThat(errors.getFirst().getMessage()).startsWith(\"Cannot deserialize value\");\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/bidder/adpone/AdponeBidderTest.java",
+    "aPath": "src/test/java/org/prebid/server/bidder/adpone/AdponeBidderTest.java",
+    "bCommit": "e02e0942f",
+    "aCommit": "edd4dd17c",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "@Test",
+          "type": "DELETE",
+          "lineNo": 41
+        },
+        {
+          "line": "public void makeHttpRequestsShouldReturnErrorIfFirstImpExtCannotBeParsed() {",
+          "type": "DELETE",
+          "lineNo": 42
+        },
+        {
+          "line": "// given",
+          "type": "DELETE",
+          "lineNo": 43
+        },
+        {
+          "line": "final BidRequest bidRequest = givenBidRequest(mapper.createArrayNode());",
+          "type": "DELETE",
+          "lineNo": 44
+        },
+        {
+          "line": "// when",
+          "type": "DELETE",
+          "lineNo": 46
+        },
+        {
+          "line": "final Result<List<HttpRequest<BidRequest>>> result = target.makeHttpRequests(bidRequest);",
+          "type": "DELETE",
+          "lineNo": 47
+        },
+        {
+          "line": "// then",
+          "type": "DELETE",
+          "lineNo": 49
+        },
+        {
+          "line": "assertThat(result.getValue()).isEmpty();",
+          "type": "DELETE",
+          "lineNo": 50
+        },
+        {
+          "line": "final List<BidderError> errors = result.getErrors();",
+          "type": "DELETE",
+          "lineNo": 52
+        },
+        {
+          "line": "assertThat(errors).hasSize(1);",
+          "type": "DELETE",
+          "lineNo": 53
+        },
+        {
+          "line": "assertThat(errors.get(0).getMessage()).startsWith(\"Cannot deserialize value\");",
+          "type": "DELETE",
+          "lineNo": 54
+        },
+        {
+          "line": "}",
+          "type": "DELETE",
+          "lineNo": 55
+        }
+      ],
+      "type": "DELETE",
+      "sourceElements": [
+        {
+          "type": "CtMethod",
+          "value": "org.prebid.server.bidder.adpone.AdponeBidderTest.makeHttpRequestsShouldReturnErrorIfFirstImpExtCannotBeParsed()"
+        },
+        {
+          "type": "CtAnnotation",
+          "value": "org.junit.Test"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "void"
+        },
+        {
+          "type": "CtLocalVariable",
+          "value": "com.iab.openrtb.request.BidRequest bidRequest"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.iab.openrtb.request.BidRequest"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.bidder.adpone.AdponeBidderTest.givenBidRequest(JsonNode)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.bidder.adpone.AdponeBidderTest.givenBidRequest(JsonNode)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "com.fasterxml.jackson.databind.ObjectMapper.createArrayNode()"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.fasterxml.jackson.databind.ObjectMapper mapper"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "com.fasterxml.jackson.databind.ObjectMapper.createArrayNode()"
+        },
+        {
+          "type": "CtLocalVariable",
+          "value": "org.prebid.server.bidder.model.Result result"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "org.prebid.server.bidder.model.Result"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "java.util.List"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "org.prebid.server.bidder.model.HttpRequest"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "com.iab.openrtb.request.BidRequest"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.bidder.adpone.AdponeBidder.makeHttpRequests(BidRequest)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "org.prebid.server.bidder.adpone.AdponeBidder target"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.bidder.adpone.AdponeBidder.makeHttpRequests(BidRequest)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "com.iab.openrtb.request.BidRequest bidRequest"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "isEmpty()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "getValue()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "org.prebid.server.bidder.model.Result result"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "getValue()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "isEmpty()"
+        },
+        {
+          "type": "CtLocalVariable",
+          "value": "java.util.List errors"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "java.util.List"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "org.prebid.server.bidder.model.BidderError"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "getErrors()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "org.prebid.server.bidder.model.Result result"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "getErrors()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "hasSize(int)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertThat(java.util.List)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertThat(java.util.List)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.util.List errors"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "hasSize(int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '1'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "startsWith(java.lang.String)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "getMessage()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "java.util.List.get(int)"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "java.util.List errors"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "java.util.List.get(int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "getMessage()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "startsWith(java.lang.String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'Cannot deserialize value'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "get",
+          "childCount": 2
+        },
+        "dstNode": {
+          "label": "getFirst",
+          "childCount": 1
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "success",
+      "error_lines": null
+    },
+    "aCommitTime": 1716983520,
+    "ID": "prebid/prebid-server-java:6",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.activity.infrastructure.privacy.usnat.reader.USNationalGppReaderTest.getMspaOptOutOptionModeShouldReturnExpectedResult()",
+    "bSource": {
+      "startLine": 201,
+      "code": "@Test\n    public void getMspaOptOutOptionModeShouldReturnExpectedResult() {\n        // given\n        given(uspNatV1.getMspaOptOutOptionMode()).willReturn(1);\n\n        // when and then\n        assertThat(gppReader.getMspaOptOutOptionMode()).isEqualTo(1);\n    }"
+    },
+    "aSource": {
+      "startLine": 201,
+      "code": "@Test\n    public void getMspaOptOutOptionModeShouldReturnExpectedResult() {\n        // given\n        given(usNatV1.getMspaOptOutOptionMode()).willReturn(1);\n\n        // when and then\n        assertThat(gppReader.getMspaOptOutOptionMode()).isEqualTo(1);\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/activity/infrastructure/privacy/usnat/reader/USNationalGppReaderTest.java",
+    "aPath": "src/test/java/org/prebid/server/activity/infrastructure/privacy/usnat/reader/USNationalGppReaderTest.java",
+    "bCommit": "d5af622b2",
+    "aCommit": "6aabd8b65",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "given(uspNatV1.getMspaOptOutOptionMode()).willReturn(1);",
+          "type": "DELETE",
+          "lineNo": 204
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "given(usNatV1.getMspaOptOutOptionMode()).willReturn(1);",
+          "type": "ADD",
+          "lineNo": 204
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "willReturn(int)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "given(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "given(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "getMspaOptOutOptionMode()"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.iab.gpp.encoder.section.UspNatV1 uspNatV1"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "getMspaOptOutOptionMode()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "willReturn(int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '1'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "willReturn(int)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "given(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "given(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "getMspaOptOutOptionMode()"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.iab.gpp.encoder.section.UsNatV1 usNatV1"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "getMspaOptOutOptionMode()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "willReturn(int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '1'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "FieldRead",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "uspNatV1",
+          "childCount": 1
+        },
+        "dstNode": {
+          "label": "usNatV1",
+          "childCount": 1
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        204
+      ]
+    },
+    "aCommitTime": 1715168265,
+    "ID": "prebid/prebid-server-java:1",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.activity.infrastructure.privacy.uscustomlogic.reader.USConnecticutGppReaderTest.getMspaOptOutOptionModeShouldReturnExpectedResult()",
+    "bSource": {
+      "startLine": 191,
+      "code": "@Test\n    public void getMspaOptOutOptionModeShouldReturnExpectedResult() {\n        // given\n        given(uspCtV1.getMspaOptOutOptionMode()).willReturn(1);\n\n        // when and then\n        assertThat(gppReader.getMspaOptOutOptionMode()).isEqualTo(1);\n    }"
+    },
+    "aSource": {
+      "startLine": 191,
+      "code": "@Test\n    public void getMspaOptOutOptionModeShouldReturnExpectedResult() {\n        // given\n        given(usCtV1.getMspaOptOutOptionMode()).willReturn(1);\n\n        // when and then\n        assertThat(gppReader.getMspaOptOutOptionMode()).isEqualTo(1);\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/activity/infrastructure/privacy/uscustomlogic/reader/USConnecticutGppReaderTest.java",
+    "aPath": "src/test/java/org/prebid/server/activity/infrastructure/privacy/uscustomlogic/reader/USConnecticutGppReaderTest.java",
+    "bCommit": "d5af622b2",
+    "aCommit": "6aabd8b65",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "given(uspCtV1.getMspaOptOutOptionMode()).willReturn(1);",
+          "type": "DELETE",
+          "lineNo": 194
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "given(usCtV1.getMspaOptOutOptionMode()).willReturn(1);",
+          "type": "ADD",
+          "lineNo": 194
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "willReturn(int)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "given(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "given(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "getMspaOptOutOptionMode()"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.iab.gpp.encoder.section.UspCtV1 uspCtV1"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "getMspaOptOutOptionMode()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "willReturn(int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '1'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "willReturn(int)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "given(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "given(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "getMspaOptOutOptionMode()"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "com.iab.gpp.encoder.section.UsCtV1 usCtV1"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "getMspaOptOutOptionMode()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "willReturn(int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '1'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "FieldRead",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "uspCtV1",
+          "childCount": 1
+        },
+        "dstNode": {
+          "label": "usCtV1",
+          "childCount": 1
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        194
+      ]
+    },
+    "aCommitTime": 1715168265,
+    "ID": "prebid/prebid-server-java:2",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.auction.PrivacyEnforcementServiceTest.contextFromBidRequestShouldReturnTcfContext()",
+    "bSource": {
+      "startLine": 184,
+      "code": "@Test\n    public void contextFromBidRequestShouldReturnTcfContext() {\n        // given\n        final String referer = \"Referer\";\n        final BidRequest bidRequest = BidRequest.builder()\n                .regs(Regs.builder().gdpr(1).usPrivacy(\"1YYY\").build())\n                .user(User.builder()\n                        .consent(\"consent\")\n                        .build())\n                .site(Site.builder().ref(referer).build())\n                .build();\n\n        final TcfContext tcfContext = TcfContext.builder()\n                .inGdprScope(true)\n                .consentString(\"consent\")\n                .consent(TCStringEmpty.create())\n                .warnings(emptyList())\n                .build();\n        given(tcfDefinerService.resolveTcfContext(any(), any(), any(), any(), any(), any(), any()))\n                .willReturn(Future.succeededFuture(tcfContext));\n\n        final String accountId = \"account\";\n        final MetricName requestType = MetricName.openrtb2web;\n\n        final AuctionContext auctionContext = AuctionContext.builder()\n                .bidRequest(bidRequest)\n                .account(Account.empty(accountId))\n                .requestTypeMetric(requestType)\n                .prebidErrors(new ArrayList<>())\n                .debugWarnings(new ArrayList<>())\n                .build();\n\n        // when\n        final Future<PrivacyContext> privacyContext = privacyEnforcementService.contextFromBidRequest(auctionContext);\n\n        // then\n        final Privacy privacy = Privacy.builder()\n                .gdpr(\"1\")\n                .consentString(\"consent\")\n                .ccpa(Ccpa.of(\"1YYY\"))\n                .coppa(0)\n                .gpp(EMPTY)\n                .gppSid(emptyList())\n                .build();\n        FutureAssertion.assertThat(privacyContext).succeededWith(PrivacyContext.of(privacy, tcfContext));\n\n        final RequestLogInfo expectedRequestLogInfo = RequestLogInfo.of(requestType, referer, accountId);\n        verify(tcfDefinerService).resolveTcfContext(\n                eq(privacy), isNull(), isNull(), isNull(), same(requestType),\n                eq(expectedRequestLogInfo), isNull());\n    }"
+    },
+    "aSource": {
+      "startLine": 186,
+      "code": "@Test\n    public void contextFromBidRequestShouldReturnTcfContext() {\n        // given\n        final String referer = \"Referer\";\n        final BidRequest bidRequest = BidRequest.builder()\n                .regs(Regs.builder().gdpr(1).usPrivacy(\"1YYY\").build())\n                .user(User.builder()\n                        .consent(\"consent\")\n                        .build())\n                .site(Site.builder().ref(referer).build())\n                .build();\n\n        final TcfContext tcfContext = TcfContext.builder()\n                .inGdprScope(true)\n                .consentString(\"consent\")\n                .consent(TCStringEmpty.create())\n                .warnings(emptyList())\n                .build();\n        given(tcfDefinerService.resolveTcfContext(any(), any(), any(), any(), any(), any(), any()))\n                .willReturn(Future.succeededFuture(tcfContext));\n\n        final String accountId = \"account\";\n        final MetricName requestType = MetricName.openrtb2web;\n\n        final AuctionContext auctionContext = AuctionContext.builder()\n                .bidRequest(bidRequest)\n                .account(Account.empty(accountId))\n                .requestTypeMetric(requestType)\n                .timeoutContext(TimeoutContext.of(0, null, 0))\n                .prebidErrors(new ArrayList<>())\n                .debugWarnings(new ArrayList<>())\n                .build();\n\n        // when\n        final Future<PrivacyContext> privacyContext = privacyEnforcementService.contextFromBidRequest(auctionContext);\n\n        // then\n        final Privacy privacy = Privacy.builder()\n                .gdpr(\"1\")\n                .consentString(\"consent\")\n                .ccpa(Ccpa.of(\"1YYY\"))\n                .coppa(0)\n                .gpp(EMPTY)\n                .gppSid(emptyList())\n                .build();\n        FutureAssertion.assertThat(privacyContext).succeededWith(PrivacyContext.of(privacy, tcfContext));\n\n        final RequestLogInfo expectedRequestLogInfo = RequestLogInfo.of(requestType, referer, accountId);\n        verify(tcfDefinerService).resolveTcfContext(\n                eq(privacy), isNull(), isNull(), isNull(), same(requestType),\n                eq(expectedRequestLogInfo), isNull());\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/auction/PrivacyEnforcementServiceTest.java",
+    "aPath": "src/test/java/org/prebid/server/auction/PrivacyEnforcementServiceTest.java",
+    "bCommit": "3ddbe4763",
+    "aCommit": "7cf656a22",
+    "hunk": {
+      "targetChanges": [
+        {
+          "line": ".timeoutContext(TimeoutContext.of(0, null, 0))",
+          "type": "ADD",
+          "lineNo": 214
+        }
+      ],
+      "type": "ADD",
+      "sourceElements": [],
+      "targetElements": [
+        {
+          "type": "CtExecutableReference",
+          "value": "timeoutContext()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "of(int,<unknown>,int)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.auction.model.TimeoutContext"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "of(int,<unknown>,int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "build",
+          "childCount": 1
+        },
+        "dstNode": {
+          "label": "debugWarnings",
+          "childCount": 2
+        }
+      },
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "Invocation",
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "debugWarnings",
+          "childCount": 2
+        },
+        "dstNode": {
+          "label": "prebidErrors",
+          "childCount": 2
+        }
+      },
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "prebidErrors",
+          "childCount": 2
+        },
+        "dstNode": {
+          "label": "timeoutContext",
+          "childCount": 2
+        }
+      },
+      {
+        "type": "Insert",
+        "nodeType": "Invocation",
+        "parents": [
+          "LocalVariable",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "build",
+          "childCount": 1
+        }
+      },
+      {
+        "type": "Move",
+        "nodeType": "Invocation",
+        "parents": [
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "build",
+          "childCount": 1
+        },
+        "dstNode": {
+          "label": "debugWarnings",
+          "childCount": 2
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "failure",
+      "error_lines": [
+        219
+      ]
+    },
+    "aCommitTime": 1708940793,
+    "ID": "prebid/prebid-server-java:7",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.auction.PrivacyEnforcementServiceTest.contextFromBidRequestShouldCallResolveTcfContextWithIpv6AnonymizedWhenIpNotPresentAndLmtIsOne()",
+    "bSource": {
+      "startLine": 290,
+      "code": "@Test\n    public void contextFromBidRequestShouldCallResolveTcfContextWithIpv6AnonymizedWhenIpNotPresentAndLmtIsOne() {\n        // given\n        final BidRequest bidRequest = BidRequest.builder()\n                .device(Device.builder()\n                        .lmt(1)\n                        .ipv6(\"ipv6\")\n                        .build())\n                .build();\n        given(ipAddressHelper.anonymizeIpv6(any())).willReturn(\"ip-masked\");\n        given(tcfDefinerService.resolveTcfContext(any(), any(), any(), any(), any(), any(), any()))\n                .willReturn(Future.succeededFuture(TcfContext.builder().build()));\n        final AuctionContext auctionContext = AuctionContext.builder()\n                .bidRequest(bidRequest)\n                .account(Account.empty(\"account\"))\n                .prebidErrors(new ArrayList<>())\n                .build();\n\n        // when\n        privacyEnforcementService.contextFromBidRequest(auctionContext);\n\n        // then\n        verify(tcfDefinerService).resolveTcfContext(any(), any(), eq(\"ip-masked\"), any(), any(), any(), any());\n    }"
+    },
+    "aSource": {
+      "startLine": 294,
+      "code": "@Test\n    public void contextFromBidRequestShouldCallResolveTcfContextWithIpv6AnonymizedWhenIpNotPresentAndLmtIsOne() {\n        // given\n        final BidRequest bidRequest = BidRequest.builder()\n                .device(Device.builder()\n                        .lmt(1)\n                        .ipv6(\"ipv6\")\n                        .build())\n                .build();\n        given(ipAddressHelper.anonymizeIpv6(any())).willReturn(\"ip-masked\");\n        given(tcfDefinerService.resolveTcfContext(any(), any(), any(), any(), any(), any(), any()))\n                .willReturn(Future.succeededFuture(TcfContext.builder().build()));\n        final AuctionContext auctionContext = AuctionContext.builder()\n                .bidRequest(bidRequest)\n                .account(Account.empty(\"account\"))\n                .timeoutContext(TimeoutContext.of(0, null, 0))\n                .prebidErrors(new ArrayList<>())\n                .build();\n\n        // when\n        privacyEnforcementService.contextFromBidRequest(auctionContext);\n\n        // then\n        verify(tcfDefinerService).resolveTcfContext(any(), any(), eq(\"ip-masked\"), any(), any(), any(), any());\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/auction/PrivacyEnforcementServiceTest.java",
+    "aPath": "src/test/java/org/prebid/server/auction/PrivacyEnforcementServiceTest.java",
+    "bCommit": "3ddbe4763",
+    "aCommit": "7cf656a22",
+    "hunk": {
+      "targetChanges": [
+        {
+          "line": ".timeoutContext(TimeoutContext.of(0, null, 0))",
+          "type": "ADD",
+          "lineNo": 309
+        }
+      ],
+      "type": "ADD",
+      "sourceElements": [],
+      "targetElements": [
+        {
+          "type": "CtExecutableReference",
+          "value": "timeoutContext()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "of(int,<unknown>,int)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.auction.model.TimeoutContext"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "of(int,<unknown>,int)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "int '0'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "build",
+          "childCount": 1
+        },
+        "dstNode": {
+          "label": "prebidErrors",
+          "childCount": 2
+        }
+      },
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "Invocation",
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "prebidErrors",
+          "childCount": 2
+        },
+        "dstNode": {
+          "label": "timeoutContext",
+          "childCount": 2
+        }
+      },
+      {
+        "type": "Insert",
+        "nodeType": "Invocation",
+        "parents": [
+          "LocalVariable",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "build",
+          "childCount": 1
+        }
+      },
+      {
+        "type": "Move",
+        "nodeType": "Invocation",
+        "parents": [
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "build",
+          "childCount": 1
+        },
+        "dstNode": {
+          "label": "prebidErrors",
+          "childCount": 2
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "failure",
+      "error_lines": [
+        313
+      ]
+    },
+    "aCommitTime": 1708940793,
+    "ID": "prebid/prebid-server-java:8",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.auction.TargetingKeywordsCreatorTest.shouldReturnTargetingKeywordsForWinningBidOpenrtb()",
+    "bSource": {
+      "startLine": 88,
+      "code": "@Test\n    public void shouldReturnTargetingKeywordsForWinningBidOpenrtb() {\n        // given\n        final Bid bid = Bid.builder()\n                .price(BigDecimal.ONE)\n                .dealid(\"dealId1\")\n                .w(50)\n                .h(100)\n                .build();\n\n        // when\n        final Map<String, String> keywords = TargetingKeywordsCreator.create(\n                        ExtPriceGranularity.of(\n                                2,\n                                singletonList(ExtGranularityRange.of(BigDecimal.valueOf(5), BigDecimal.valueOf(0.5)))),\n                        true,\n                        true,\n                        false,\n                        true,\n                        false,\n                        0,\n                        null,\n                        null,\n                        null)\n                .makeFor(bid, \"bidder1\", true, \"cacheId1\", \"banner\", \"videoCacheId1\", \"categoryDuration\");\n\n        // then\n        assertThat(keywords).containsOnly(\n                entry(\"hb_pb_bidder1\", \"1.00\"),\n                entry(\"hb_bidder_bidder1\", \"bidder1\"),\n                entry(\"hb_size_bidder1\", \"50x100\"),\n                entry(\"hb_deal_bidder1\", \"dealId1\"),\n                entry(\"hb_pb\", \"1.00\"),\n                entry(\"hb_bidder\", \"bidder1\"),\n                entry(\"hb_size\", \"50x100\"),\n                entry(\"hb_deal\", \"dealId1\"),\n                entry(\"hb_cache_id\", \"cacheId1\"),\n                entry(\"hb_cache_id_bidder1\", \"cacheId1\"),\n                entry(\"hb_uuid\", \"videoCacheId1\"),\n                entry(\"hb_uuid_bidder1\", \"videoCacheId1\"),\n                entry(\"hb_format\", \"banner\"),\n                entry(\"hb_format_bidder1\", \"banner\"),\n                entry(\"hb_pb_cat_dur_bidder1\", \"categoryDuration\"),\n                entry(\"hb_pb_cat_dur\", \"categoryDuration\"));\n    }"
+    },
+    "aSource": {
+      "startLine": 91,
+      "code": "@Test\n    public void shouldReturnTargetingKeywordsForWinningBidOpenrtb() {\n        // given\n        final Bid bid = Bid.builder()\n                .price(BigDecimal.ONE)\n                .dealid(\"dealId1\")\n                .w(50)\n                .h(100)\n                .build();\n\n        // when\n        final Map<String, String> keywords = TargetingKeywordsCreator.create(\n                        ExtPriceGranularity.of(\n                                2,\n                                singletonList(ExtGranularityRange.of(BigDecimal.valueOf(5), BigDecimal.valueOf(0.5)))),\n                        true,\n                        true,\n                        false,\n                        true,\n                        false,\n                        0,\n                        null,\n                        null,\n                        null,\n                        defaultKeyPrefix)\n                .makeFor(bid, \"bidder1\", true, \"cacheId1\", \"banner\", \"videoCacheId1\", \"categoryDuration\");\n\n        // then\n        assertThat(keywords).containsOnly(\n                entry(\"hb_pb_bidder1\", \"1.00\"),\n                entry(\"hb_bidder_bidder1\", \"bidder1\"),\n                entry(\"hb_size_bidder1\", \"50x100\"),\n                entry(\"hb_deal_bidder1\", \"dealId1\"),\n                entry(\"hb_pb\", \"1.00\"),\n                entry(\"hb_bidder\", \"bidder1\"),\n                entry(\"hb_size\", \"50x100\"),\n                entry(\"hb_deal\", \"dealId1\"),\n                entry(\"hb_cache_id\", \"cacheId1\"),\n                entry(\"hb_cache_id_bidder1\", \"cacheId1\"),\n                entry(\"hb_uuid\", \"videoCacheId1\"),\n                entry(\"hb_uuid_bidder1\", \"videoCacheId1\"),\n                entry(\"hb_format\", \"banner\"),\n                entry(\"hb_format_bidder1\", \"banner\"),\n                entry(\"hb_pb_cat_dur_bidder1\", \"categoryDuration\"),\n                entry(\"hb_pb_cat_dur\", \"categoryDuration\"));\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/auction/TargetingKeywordsCreatorTest.java",
+    "aPath": "src/test/java/org/prebid/server/auction/TargetingKeywordsCreatorTest.java",
+    "bCommit": "5108de36c",
+    "aCommit": "96eda0b11",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "null)",
+          "type": "DELETE",
+          "lineNo": 111
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "null,",
+          "type": "ADD",
+          "lineNo": 114
+        },
+        {
+          "line": "defaultKeyPrefix)",
+          "type": "ADD",
+          "lineNo": 115
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String defaultKeyPrefix"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "FieldRead",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "LocalVariable",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "defaultKeyPrefix",
+          "childCount": 1
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        102
+      ]
+    },
+    "aCommitTime": 1701958804,
+    "ID": "prebid/prebid-server-java:12",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.auction.TargetingKeywordsCreatorTest.shouldNotIncludeDealBidTargetingIfAlwaysIncludeDealsFlagIsFalse()",
+    "bSource": {
+      "startLine": 505,
+      "code": "@Test\n    public void shouldNotIncludeDealBidTargetingIfAlwaysIncludeDealsFlagIsFalse() {\n        // given\n        final Bid bid = Bid.builder().price(BigDecimal.ONE).dealid(\"dealId\").build();\n\n        // when\n        final Map<String, String> keywords = TargetingKeywordsCreator.create(\n                        ExtPriceGranularity.of(\n                                2,\n                                singletonList(ExtGranularityRange.of(BigDecimal.valueOf(5), BigDecimal.valueOf(0.5)))),\n                        false,\n                        false,\n                        false,\n                        false,\n                        false,\n                        0,\n                        null,\n                        null,\n                        null)\n                .makeFor(bid, \"bidder1\", false, null, null, null, null);\n\n        // then\n        assertThat(keywords).doesNotContainKeys(\"hb_bidder_bidder1\", \"hb_deal_bidder1\", \"hb_pb_bidder1\");\n    }"
+    },
+    "aSource": {
+      "startLine": 523,
+      "code": "@Test\n    public void shouldNotIncludeDealBidTargetingIfAlwaysIncludeDealsFlagIsFalse() {\n        // given\n        final Bid bid = Bid.builder().price(BigDecimal.ONE).dealid(\"dealId\").build();\n\n        // when\n        final Map<String, String> keywords = TargetingKeywordsCreator.create(\n                        ExtPriceGranularity.of(\n                                2,\n                                singletonList(ExtGranularityRange.of(BigDecimal.valueOf(5), BigDecimal.valueOf(0.5)))),\n                        false,\n                        false,\n                        false,\n                        false,\n                        false,\n                        0,\n                        null,\n                        null,\n                        null,\n                        defaultKeyPrefix)\n                .makeFor(bid, \"bidder1\", false, null, null, null, null);\n\n        // then\n        assertThat(keywords).doesNotContainKeys(\"hb_bidder_bidder1\", \"hb_deal_bidder1\", \"hb_pb_bidder1\");\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/auction/TargetingKeywordsCreatorTest.java",
+    "aPath": "src/test/java/org/prebid/server/auction/TargetingKeywordsCreatorTest.java",
+    "bCommit": "5108de36c",
+    "aCommit": "96eda0b11",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "null)",
+          "type": "DELETE",
+          "lineNo": 523
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "null,",
+          "type": "ADD",
+          "lineNo": 541
+        },
+        {
+          "line": "defaultKeyPrefix)",
+          "type": "ADD",
+          "lineNo": 542
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String defaultKeyPrefix"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "FieldRead",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "LocalVariable",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "defaultKeyPrefix",
+          "childCount": 1
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        529
+      ]
+    },
+    "aCommitTime": 1701958804,
+    "ID": "prebid/prebid-server-java:13",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.auction.TargetingKeywordsCreatorTest.shouldIncludeFormatOpenrtb()",
+    "bSource": {
+      "startLine": 134,
+      "code": "@Test\n    public void shouldIncludeFormatOpenrtb() {\n        // given\n        final Bid bid = Bid.builder()\n                .price(BigDecimal.valueOf(3.87)).build();\n\n        // when\n        final Map<String, String> keywords = TargetingKeywordsCreator.create(\n                        ExtPriceGranularity.of(\n                                2,\n                                singletonList(ExtGranularityRange.of(BigDecimal.valueOf(5), BigDecimal.valueOf(0.5)))),\n                        true,\n                        true,\n                        false,\n                        true,\n                        false,\n                        0,\n                        null,\n                        null,\n                        null)\n                .makeFor(bid, \"\", true, null, \"banner\", null, null);\n\n        // then\n        assertThat(keywords).contains(entry(\"hb_format\", \"banner\"));\n    }"
+    },
+    "aSource": {
+      "startLine": 138,
+      "code": "@Test\n    public void shouldIncludeFormatOpenrtb() {\n        // given\n        final Bid bid = Bid.builder()\n                .price(BigDecimal.valueOf(3.87)).build();\n\n        // when\n        final Map<String, String> keywords = TargetingKeywordsCreator.create(\n                        ExtPriceGranularity.of(\n                                2,\n                                singletonList(ExtGranularityRange.of(BigDecimal.valueOf(5), BigDecimal.valueOf(0.5)))),\n                        true,\n                        true,\n                        false,\n                        true,\n                        false,\n                        0,\n                        null,\n                        null,\n                        null,\n                        defaultKeyPrefix)\n                .makeFor(bid, \"\", true, null, \"banner\", null, null);\n\n        // then\n        assertThat(keywords).contains(entry(\"hb_format\", \"banner\"));\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/auction/TargetingKeywordsCreatorTest.java",
+    "aPath": "src/test/java/org/prebid/server/auction/TargetingKeywordsCreatorTest.java",
+    "bCommit": "5108de36c",
+    "aCommit": "96eda0b11",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "null)",
+          "type": "DELETE",
+          "lineNo": 153
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "null,",
+          "type": "ADD",
+          "lineNo": 157
+        },
+        {
+          "line": "defaultKeyPrefix)",
+          "type": "ADD",
+          "lineNo": 158
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String defaultKeyPrefix"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "FieldRead",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "LocalVariable",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "defaultKeyPrefix",
+          "childCount": 1
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        145
+      ]
+    },
+    "aCommitTime": 1701958804,
+    "ID": "prebid/prebid-server-java:14",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.auction.TargetingKeywordsCreatorTest.shouldTruncateTargetingBidderKeywordsIfTruncateAttrCharsIsDefined()",
+    "bSource": {
+      "startLine": 313,
+      "code": "@Test\n    public void shouldTruncateTargetingBidderKeywordsIfTruncateAttrCharsIsDefined() {\n        // given\n        final Bid bid = Bid.builder().price(BigDecimal.ONE).build();\n\n        // when\n        final Map<String, String> keywords = TargetingKeywordsCreator.create(\n                        ExtPriceGranularity.of(\n                                2,\n                                singletonList(ExtGranularityRange.of(BigDecimal.valueOf(5), BigDecimal.valueOf(0.5)))),\n                        false,\n                        true,\n                        false,\n                        false,\n                        false,\n                        20,\n                        null,\n                        null,\n                        null)\n                .makeFor(bid, \"someVeryLongBidderName\", true, null, null, null, null);\n\n        // then\n        assertThat(keywords).hasSize(2)\n                .containsKeys(\"hb_bidder_someVeryLo\", \"hb_pb_someVeryLongBi\");\n    }"
+    },
+    "aSource": {
+      "startLine": 324,
+      "code": "@Test\n    public void shouldTruncateTargetingBidderKeywordsIfTruncateAttrCharsIsDefined() {\n        // given\n        final Bid bid = Bid.builder().price(BigDecimal.ONE).build();\n\n        // when\n        final Map<String, String> keywords = TargetingKeywordsCreator.create(\n                        ExtPriceGranularity.of(\n                                2,\n                                singletonList(ExtGranularityRange.of(BigDecimal.valueOf(5), BigDecimal.valueOf(0.5)))),\n                        false,\n                        true,\n                        false,\n                        false,\n                        false,\n                        20,\n                        null,\n                        null,\n                        null,\n                        defaultKeyPrefix)\n                .makeFor(bid, \"someVeryLongBidderName\", true, null, null, null, null);\n\n        // then\n        assertThat(keywords).hasSize(2)\n                .containsKeys(\"hb_bidder_someVeryLo\", \"hb_pb_someVeryLongBi\");\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/auction/TargetingKeywordsCreatorTest.java",
+    "aPath": "src/test/java/org/prebid/server/auction/TargetingKeywordsCreatorTest.java",
+    "bCommit": "5108de36c",
+    "aCommit": "96eda0b11",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "null)",
+          "type": "DELETE",
+          "lineNo": 331
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "null,",
+          "type": "ADD",
+          "lineNo": 342
+        },
+        {
+          "line": "defaultKeyPrefix)",
+          "type": "ADD",
+          "lineNo": 343
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String defaultKeyPrefix"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "FieldRead",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "LocalVariable",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "defaultKeyPrefix",
+          "childCount": 1
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        330
+      ]
+    },
+    "aCommitTime": 1701958804,
+    "ID": "prebid/prebid-server-java:15",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.auction.TargetingKeywordsCreatorTest.shouldNotTruncateTargetingKeywordsIfTruncateAttrCharsIsNotDefined()",
+    "bSource": {
+      "startLine": 392,
+      "code": "@Test\n    public void shouldNotTruncateTargetingKeywordsIfTruncateAttrCharsIsNotDefined() {\n        // given\n        final Bid bid = Bid.builder().price(BigDecimal.ONE).build();\n\n        // when\n        final Map<String, String> keywords = TargetingKeywordsCreator.create(\n                        ExtPriceGranularity.of(\n                                2,\n                                singletonList(ExtGranularityRange.of(BigDecimal.valueOf(5), BigDecimal.valueOf(0.5)))),\n                        false,\n                        true,\n                        false,\n                        false,\n                        false,\n                        0,\n                        null,\n                        null,\n                        null)\n                .makeFor(bid, \"someVeryLongBidderName\", true, null, null, null, null);\n\n        // then\n        assertThat(keywords).hasSize(2)\n                .containsKeys(\"hb_bidder_someVeryLongBidderName\", \"hb_pb_someVeryLongBidderName\");\n    }"
+    },
+    "aSource": {
+      "startLine": 406,
+      "code": "@Test\n    public void shouldNotTruncateTargetingKeywordsIfTruncateAttrCharsIsNotDefined() {\n        // given\n        final Bid bid = Bid.builder().price(BigDecimal.ONE).build();\n\n        // when\n        final Map<String, String> keywords = TargetingKeywordsCreator.create(\n                        ExtPriceGranularity.of(\n                                2,\n                                singletonList(ExtGranularityRange.of(BigDecimal.valueOf(5), BigDecimal.valueOf(0.5)))),\n                        false,\n                        true,\n                        false,\n                        false,\n                        false,\n                        0,\n                        null,\n                        null,\n                        null,\n                        defaultKeyPrefix)\n                .makeFor(bid, \"someVeryLongBidderName\", true, null, null, null, null);\n\n        // then\n        assertThat(keywords).hasSize(2)\n                .containsKeys(\"hb_bidder_someVeryLongBidderName\", \"hb_pb_someVeryLongBidderName\");\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/auction/TargetingKeywordsCreatorTest.java",
+    "aPath": "src/test/java/org/prebid/server/auction/TargetingKeywordsCreatorTest.java",
+    "bCommit": "5108de36c",
+    "aCommit": "96eda0b11",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "null)",
+          "type": "DELETE",
+          "lineNo": 410
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "null,",
+          "type": "ADD",
+          "lineNo": 424
+        },
+        {
+          "line": "defaultKeyPrefix)",
+          "type": "ADD",
+          "lineNo": 425
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLiteral",
+          "value": "<nulltype> 'null'"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.String defaultKeyPrefix"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "FieldRead",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "LocalVariable",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "defaultKeyPrefix",
+          "childCount": 1
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        412
+      ]
+    },
+    "aCommitTime": 1701958804,
+    "ID": "prebid/prebid-server-java:16",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.util.VersionInfoTest.shouldCreateVersionWithUndefinedForEachMissingPropertyInFile()",
+    "bSource": {
+      "startLine": 39,
+      "code": "@Test\n    public void shouldCreateVersionWithUndefinedForEachMissingPropertyInFile() {\n        // when\n        VersionInfo versionInfo = VersionInfo.create(\n                \"org/prebid/server/util/resource/version/empty.json\", jacksonMapper);\n\n        // then\n        assertThat(versionInfo)\n                .extracting(VersionInfo::getVersion, VersionInfo::getCommitHash)\n                .containsOnly(\"undefined\", \"undefined\");\n    }"
+    },
+    "aSource": {
+      "startLine": 39,
+      "code": "@Test\n    public void shouldCreateVersionWithUndefinedForEachMissingPropertyInFile() {\n        // when\n        final VersionInfo versionInfo = VersionInfo.create(\n                \"org/prebid/server/util/resource/version/empty.json\", jacksonMapper);\n\n        // then\n        assertThat(versionInfo)\n                .extracting(VersionInfo::getVersion, VersionInfo::getCommitHash)\n                .containsOnly(\"undefined\", \"undefined\");\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/util/VersionInfoTest.java",
+    "aPath": "src/test/java/org/prebid/server/util/VersionInfoTest.java",
+    "bCommit": "185953727",
+    "aCommit": "f46839a2a",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "VersionInfo versionInfo = VersionInfo.create(",
+          "type": "DELETE",
+          "lineNo": 42
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "final VersionInfo versionInfo = VersionInfo.create(",
+          "type": "ADD",
+          "lineNo": 42
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "org.prebid.server.util.VersionInfo versionInfo"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "org.prebid.server.util.VersionInfo"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.util.VersionInfo.create(String,JacksonMapper)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.util.VersionInfo"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.util.VersionInfo.create(String,JacksonMapper)"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "org.prebid.server.util.VersionInfo versionInfo"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "org.prebid.server.util.VersionInfo"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.util.VersionInfo.create(String,JacksonMapper)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.util.VersionInfo"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.util.VersionInfo.create(String,JacksonMapper)"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "Modifiers_LocalVariable",
+        "parents": [
+          "LocalVariable",
+          "Method",
+          "root",
+          ""
+        ]
+      }
+    ],
+    "refactorings": [
+      "ADD_VARIABLE_MODIFIER"
+    ],
+    "verdict": {
+      "status": "success",
+      "error_lines": null
+    },
+    "aCommitTime": 1689163536,
+    "ID": "prebid/prebid-server-java:9",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.util.VersionInfoTest.shouldCreateVersionWithUndefinedForAllFieldsIfFileWasNotFound()",
+    "bSource": {
+      "startLine": 16,
+      "code": "@Test\n    public void shouldCreateVersionWithUndefinedForAllFieldsIfFileWasNotFound() {\n        // when\n        VersionInfo versionInfo = VersionInfo.create(\"not_found.json\", jacksonMapper);\n\n        // then\n        assertThat(versionInfo)\n                .extracting(VersionInfo::getVersion, VersionInfo::getCommitHash)\n                .containsOnly(\"undefined\", \"undefined\");\n    }"
+    },
+    "aSource": {
+      "startLine": 16,
+      "code": "@Test\n    public void shouldCreateVersionWithUndefinedForAllFieldsIfFileWasNotFound() {\n        // when\n        final VersionInfo versionInfo = VersionInfo.create(\"not_found.json\", jacksonMapper);\n\n        // then\n        assertThat(versionInfo)\n                .extracting(VersionInfo::getVersion, VersionInfo::getCommitHash)\n                .containsOnly(\"undefined\", \"undefined\");\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/util/VersionInfoTest.java",
+    "aPath": "src/test/java/org/prebid/server/util/VersionInfoTest.java",
+    "bCommit": "185953727",
+    "aCommit": "f46839a2a",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "VersionInfo versionInfo = VersionInfo.create(\"not_found.json\", jacksonMapper);",
+          "type": "DELETE",
+          "lineNo": 19
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "final VersionInfo versionInfo = VersionInfo.create(\"not_found.json\", jacksonMapper);",
+          "type": "ADD",
+          "lineNo": 19
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "org.prebid.server.util.VersionInfo versionInfo"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "org.prebid.server.util.VersionInfo"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.util.VersionInfo.create(String,JacksonMapper)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.util.VersionInfo"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.util.VersionInfo.create(String,JacksonMapper)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'not_found.json'"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "org.prebid.server.json.JacksonMapper jacksonMapper"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "org.prebid.server.util.VersionInfo versionInfo"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "org.prebid.server.util.VersionInfo"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.util.VersionInfo.create(String,JacksonMapper)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.util.VersionInfo"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.util.VersionInfo.create(String,JacksonMapper)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'not_found.json'"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "org.prebid.server.json.JacksonMapper jacksonMapper"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "Modifiers_LocalVariable",
+        "parents": [
+          "LocalVariable",
+          "Method",
+          "root",
+          ""
+        ]
+      }
+    ],
+    "refactorings": [
+      "ADD_VARIABLE_MODIFIER"
+    ],
+    "verdict": {
+      "status": "success",
+      "error_lines": null
+    },
+    "aCommitTime": 1689163536,
+    "ID": "prebid/prebid-server-java:10",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.util.VersionInfoTest.shouldCreateVersionInfoWithAllProperties()",
+    "bSource": {
+      "startLine": 27,
+      "code": "@Test\n    public void shouldCreateVersionInfoWithAllProperties() {\n        // when\n        VersionInfo versionInfo = VersionInfo.create(\n                \"org/prebid/server/util/resource/version/version.json\", jacksonMapper);\n\n        // then\n        assertThat(versionInfo)\n                .extracting(VersionInfo::getVersion, VersionInfo::getCommitHash)\n                .containsOnly(\"1.41.0\", \"4df3f6192d7938ccdaac04df783c46c7e8847d08\");\n    }"
+    },
+    "aSource": {
+      "startLine": 27,
+      "code": "@Test\n    public void shouldCreateVersionInfoWithAllProperties() {\n        // when\n        final VersionInfo versionInfo = VersionInfo.create(\n                \"org/prebid/server/util/resource/version/version.json\", jacksonMapper);\n\n        // then\n        assertThat(versionInfo)\n                .extracting(VersionInfo::getVersion, VersionInfo::getCommitHash)\n                .containsOnly(\"1.41.0\", \"4df3f6192d7938ccdaac04df783c46c7e8847d08\");\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/util/VersionInfoTest.java",
+    "aPath": "src/test/java/org/prebid/server/util/VersionInfoTest.java",
+    "bCommit": "185953727",
+    "aCommit": "f46839a2a",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "VersionInfo versionInfo = VersionInfo.create(",
+          "type": "DELETE",
+          "lineNo": 30
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "final VersionInfo versionInfo = VersionInfo.create(",
+          "type": "ADD",
+          "lineNo": 30
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "org.prebid.server.util.VersionInfo versionInfo"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "org.prebid.server.util.VersionInfo"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.util.VersionInfo.create(String,JacksonMapper)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.util.VersionInfo"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.util.VersionInfo.create(String,JacksonMapper)"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtLocalVariable",
+          "value": "org.prebid.server.util.VersionInfo versionInfo"
+        },
+        {
+          "type": "CtTypeReference",
+          "value": "org.prebid.server.util.VersionInfo"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.util.VersionInfo.create(String,JacksonMapper)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.util.VersionInfo"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.util.VersionInfo.create(String,JacksonMapper)"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Insert",
+        "nodeType": "Modifiers_LocalVariable",
+        "parents": [
+          "LocalVariable",
+          "Method",
+          "root",
+          ""
+        ]
+      }
+    ],
+    "refactorings": [
+      "ADD_VARIABLE_MODIFIER"
+    ],
+    "verdict": {
+      "status": "success",
+      "error_lines": null
+    },
+    "aCommitTime": 1689163536,
+    "ID": "prebid/prebid-server-java:11",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.auction.ImplicitParametersExtractorTest.gpcFromShouldReturn1OnInteger()",
+    "bSource": {
+      "startLine": 199,
+      "code": "@Test\n    public void gpcFromShouldReturn1OnInteger() {\n        // given\n        final HttpRequestContext httpRequest = HttpRequestContext.builder()\n                .headers(CaseInsensitiveMultiMap.builder()\n                        .add(HttpUtil.SEC_GPC, \"1\")\n                        .build())\n                .build();\n\n        // when\n        final String gpc = extractor.gpcFrom(httpRequest);\n\n        // then\n        assertThat(gpc).isEqualTo(\"1\");\n    }"
+    },
+    "aSource": {
+      "startLine": 199,
+      "code": "@Test\n    public void gpcFromShouldReturn1OnInteger() {\n        // given\n        final HttpRequestContext httpRequest = HttpRequestContext.builder()\n                .headers(CaseInsensitiveMultiMap.builder()\n                        .add(HttpUtil.SEC_GPC_HEADER, \"1\")\n                        .build())\n                .build();\n\n        // when\n        final String gpc = extractor.gpcFrom(httpRequest);\n\n        // then\n        assertThat(gpc).isEqualTo(\"1\");\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/auction/ImplicitParametersExtractorTest.java",
+    "aPath": "src/test/java/org/prebid/server/auction/ImplicitParametersExtractorTest.java",
+    "bCommit": "8b40c0322",
+    "aCommit": "4b9fb727c",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": ".add(HttpUtil.SEC_GPC, \"1\")",
+          "type": "DELETE",
+          "lineNo": 204
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": ".add(HttpUtil.SEC_GPC_HEADER, \"1\")",
+          "type": "ADD",
+          "lineNo": 204
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.model.CaseInsensitiveMultiMap$Builder.add(CharSequence,CharSequence)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.CharSequence SEC_GPC"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.util.HttpUtil"
+        },
+        {
+          "type": "CtFieldReference",
+          "value": "java.lang.CharSequence SEC_GPC"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String '1'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.model.CaseInsensitiveMultiMap$Builder.add(CharSequence,CharSequence)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.CharSequence SEC_GPC_HEADER"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.util.HttpUtil"
+        },
+        {
+          "type": "CtFieldReference",
+          "value": "java.lang.CharSequence SEC_GPC_HEADER"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String '1'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "TypeAccess",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "HttpUtil.SEC_GPC",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "HttpUtil.SEC_GPC_HEADER",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        204
+      ]
+    },
+    "aCommitTime": 1688044932,
+    "ID": "prebid/prebid-server-java:3",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.auction.ImplicitParametersExtractorTest.gpcFromShouldReturn1OnString()",
+    "bSource": {
+      "startLine": 215,
+      "code": "@Test\n    public void gpcFromShouldReturn1OnString() {\n        // given\n        final HttpRequestContext httpRequest = HttpRequestContext.builder()\n                .headers(CaseInsensitiveMultiMap.builder()\n                        .add(HttpUtil.SEC_GPC, \"\\\"1\\\"\")\n                        .build())\n                .build();\n\n        // when\n        final String gpc = extractor.gpcFrom(httpRequest);\n\n        // then\n        assertThat(gpc).isEqualTo(\"1\");\n    }"
+    },
+    "aSource": {
+      "startLine": 215,
+      "code": "@Test\n    public void gpcFromShouldReturn1OnString() {\n        // given\n        final HttpRequestContext httpRequest = HttpRequestContext.builder()\n                .headers(CaseInsensitiveMultiMap.builder()\n                        .add(HttpUtil.SEC_GPC_HEADER, \"\\\"1\\\"\")\n                        .build())\n                .build();\n\n        // when\n        final String gpc = extractor.gpcFrom(httpRequest);\n\n        // then\n        assertThat(gpc).isEqualTo(\"1\");\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/auction/ImplicitParametersExtractorTest.java",
+    "aPath": "src/test/java/org/prebid/server/auction/ImplicitParametersExtractorTest.java",
+    "bCommit": "8b40c0322",
+    "aCommit": "4b9fb727c",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": ".add(HttpUtil.SEC_GPC, \"\\\"1\\\"\")",
+          "type": "DELETE",
+          "lineNo": 220
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": ".add(HttpUtil.SEC_GPC_HEADER, \"\\\"1\\\"\")",
+          "type": "ADD",
+          "lineNo": 220
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.model.CaseInsensitiveMultiMap$Builder.add(CharSequence,CharSequence)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.CharSequence SEC_GPC"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.util.HttpUtil"
+        },
+        {
+          "type": "CtFieldReference",
+          "value": "java.lang.CharSequence SEC_GPC"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String '\"1\"'"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.model.CaseInsensitiveMultiMap$Builder.add(CharSequence,CharSequence)"
+        },
+        {
+          "type": "CtFieldRead",
+          "value": "java.lang.CharSequence SEC_GPC_HEADER"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.util.HttpUtil"
+        },
+        {
+          "type": "CtFieldReference",
+          "value": "java.lang.CharSequence SEC_GPC_HEADER"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String '\"1\"'"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "TypeAccess",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "Invocation",
+          "LocalVariable",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "HttpUtil.SEC_GPC",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "HttpUtil.SEC_GPC_HEADER",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        220
+      ]
+    },
+    "aCommitTime": 1688044932,
+    "ID": "prebid/prebid-server-java:4",
+    "trivial": null
+  },
+  {
+    "name": "org.prebid.server.deals.simulation.SimulationAwareHttpBidderRequesterTest.requestBidsShouldReturnBidderSeatBidWithoutBidderBidsAndWithError()",
+    "bSource": {
+      "startLine": 237,
+      "code": "@Test\n    public void requestBidsShouldReturnBidderSeatBidWithoutBidderBidsAndWithError() {\n        // given\n        bidderRequester.setBidRates(Collections.singletonMap(\"lineItemId1\", 1.00));\n\n        final BidRequest bidRequest = BidRequest.builder().imp(singletonList(\n                        Imp.builder().id(\"impId1\").pmp(Pmp.builder().deals(singletonList(Deal.builder()\n                                .id(\"dealId1\").build())).build()).build()))\n                .build();\n        final BidderRequest bidderRequest = BidderRequest.of(\"bidder\", null, null, bidRequest);\n\n        // when\n        final Future<BidderSeatBid> result = bidderRequester\n                .requestBids(\n                        null,\n                        bidderRequest,\n                        null,\n                        requestHeaders,\n                        bidderAliases,\n                        false);\n\n        // then\n        assertThat(result.succeeded()).isTrue();\n        assertThat(result.result()).isEqualTo(BidderSeatBid.of(\n                emptyList(),\n                emptyList(),\n                singletonList(BidderError.failedToRequestBids(\n                        \"Matched or ready to serve line items were not found, but required in simulation mode\")),\n                emptyList()));\n    }"
+    },
+    "aSource": {
+      "startLine": 236,
+      "code": "@Test\n    public void requestBidsShouldReturnBidderSeatBidWithoutBidderBidsAndWithError() {\n        // given\n        bidderRequester.setBidRates(Collections.singletonMap(\"lineItemId1\", 1.00));\n\n        final BidRequest bidRequest = BidRequest.builder().imp(singletonList(\n                        Imp.builder().id(\"impId1\").pmp(Pmp.builder().deals(singletonList(Deal.builder()\n                                .id(\"dealId1\").build())).build()).build()))\n                .build();\n        final BidderRequest bidderRequest = BidderRequest.of(\"bidder\", null, null, bidRequest);\n\n        // when\n        final Future<BidderSeatBid> result = bidderRequester\n                .requestBids(\n                        null,\n                        bidderRequest,\n                        null,\n                        requestHeaders,\n                        bidderAliases,\n                        false);\n\n        // then\n        assertThat(result.succeeded()).isTrue();\n        assertThat(result.result()).isEqualTo(BidderSeatBid.builder()\n                .errors(singletonList(BidderError.failedToRequestBids(\n                        \"Matched or ready to serve line items were not found, but required in simulation mode\")))\n                .build());\n    }"
+    },
+    "bPath": "src/test/java/org/prebid/server/deals/simulation/SimulationAwareHttpBidderRequesterTest.java",
+    "aPath": "src/test/java/org/prebid/server/deals/simulation/SimulationAwareHttpBidderRequesterTest.java",
+    "bCommit": "12f8d379c",
+    "aCommit": "5be24a131",
+    "hunk": {
+      "sourceChanges": [
+        {
+          "line": "assertThat(result.result()).isEqualTo(BidderSeatBid.of(",
+          "type": "DELETE",
+          "lineNo": 260
+        },
+        {
+          "line": "emptyList(),",
+          "type": "DELETE",
+          "lineNo": 261
+        },
+        {
+          "line": "emptyList(),",
+          "type": "DELETE",
+          "lineNo": 262
+        },
+        {
+          "line": "singletonList(BidderError.failedToRequestBids(",
+          "type": "DELETE",
+          "lineNo": 263
+        },
+        {
+          "line": "\"Matched or ready to serve line items were not found, but required in simulation mode\")),",
+          "type": "DELETE",
+          "lineNo": 264
+        },
+        {
+          "line": "emptyList()));",
+          "type": "DELETE",
+          "lineNo": 265
+        }
+      ],
+      "targetChanges": [
+        {
+          "line": "assertThat(result.result()).isEqualTo(BidderSeatBid.builder()",
+          "type": "ADD",
+          "lineNo": 259
+        },
+        {
+          "line": ".errors(singletonList(BidderError.failedToRequestBids(",
+          "type": "ADD",
+          "lineNo": 260
+        },
+        {
+          "line": "\"Matched or ready to serve line items were not found, but required in simulation mode\")))",
+          "type": "ADD",
+          "lineNo": 261
+        },
+        {
+          "line": ".build());",
+          "type": "ADD",
+          "lineNo": 262
+        }
+      ],
+      "type": "MODIFY",
+      "sourceElements": [
+        {
+          "type": "CtInvocation",
+          "value": "isEqualTo()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "result()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "io.vertx.core.Future result"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "result()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "isEqualTo()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.bidder.model.BidderSeatBid.of(List)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.bidder.model.BidderSeatBid"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.bidder.model.BidderSeatBid.of(List)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "java.util.Collections.emptyList()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "java.util.Collections.emptyList()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "java.util.Collections.emptyList()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "java.util.Collections.emptyList()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "java.util.Collections.singletonList(Object)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "java.util.Collections.singletonList(Object)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.bidder.model.BidderError.failedToRequestBids(String)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.bidder.model.BidderError"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.bidder.model.BidderError.failedToRequestBids(String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'Matched or ready to serve line items were not found, but required in simulation mode'"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "java.util.Collections.emptyList()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "java.util.Collections.emptyList()"
+        }
+      ],
+      "targetElements": [
+        {
+          "type": "CtInvocation",
+          "value": "isEqualTo()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "assertThat(<unknown>)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "result()"
+        },
+        {
+          "type": "CtVariableRead",
+          "value": "io.vertx.core.Future result"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "result()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "isEqualTo()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "build()"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "errors(java.util.List)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "builder()"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.bidder.model.BidderSeatBid"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "builder()"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "errors(java.util.List)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "java.util.Collections.singletonList(Object)"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "java.util.Collections.singletonList(Object)"
+        },
+        {
+          "type": "CtInvocation",
+          "value": "org.prebid.server.bidder.model.BidderError.failedToRequestBids(String)"
+        },
+        {
+          "type": "CtTypeAccess",
+          "value": "org.prebid.server.bidder.model.BidderError"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "org.prebid.server.bidder.model.BidderError.failedToRequestBids(String)"
+        },
+        {
+          "type": "CtLiteral",
+          "value": "java.lang.String 'Matched or ready to serve line items were not found, but required in simulation mode'"
+        },
+        {
+          "type": "CtExecutableReference",
+          "value": "build()"
+        }
+      ]
+    },
+    "astActions": [
+      {
+        "type": "Update",
+        "nodeType": "Invocation",
+        "parents": [
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "of",
+          "childCount": 5
+        },
+        "dstNode": {
+          "label": "errors",
+          "childCount": 2
+        }
+      },
+      {
+        "type": "Insert",
+        "nodeType": "Invocation",
+        "parents": [
+          "Invocation",
+          "Method",
+          "root",
+          ""
+        ],
+        "srcNode": {
+          "label": "build",
+          "childCount": 1
+        }
+      },
+      {
+        "type": "Move",
+        "nodeType": "Invocation",
+        "parents": [
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "of",
+          "childCount": 5
+        },
+        "dstNode": {
+          "label": "errors",
+          "childCount": 2
+        }
+      },
+      {
+        "type": "Move",
+        "nodeType": "TypeAccess",
+        "parents": [
+          "Invocation",
+          "Invocation",
+          "Method",
+          "root"
+        ],
+        "srcNode": {
+          "label": "org.prebid.server.bidder.model.BidderSeatBid",
+          "childCount": 0
+        },
+        "dstNode": {
+          "label": "org.prebid.server.bidder.model.BidderSeatBid",
+          "childCount": 0
+        }
+      }
+    ],
+    "refactorings": [],
+    "verdict": {
+      "status": "compile_error",
+      "error_lines": [
+        260,
+        261,
+        264
+      ]
+    },
+    "aCommitTime": 1675685361,
+    "ID": "prebid/prebid-server-java:0",
+    "trivial": null
+  }
+]
