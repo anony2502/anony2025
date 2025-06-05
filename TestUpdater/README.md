@@ -16,3 +16,8 @@
 2. Run `RQ3` to reproduce our RQ3, and evaluate the compilation and test pass rates using `eval.py`.
 
 3. We provide the datasets used by the baseline methods in `data/baselines`.
+
+### Note
+1. If the language server fail to initialize, just run command `pkill -f language_servers`, and then rerun the python command.
+
+2. We run our experiment on Ubuntu 20.04.
