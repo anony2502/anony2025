@@ -1,7 +1,7 @@
 import argparse, time, os, traceback, json, subprocess
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.messages import AIMessage
 from langsmith import Client
 
 from utils.multilspy import SyncLanguageServer
@@ -17,19 +17,18 @@ from prompt import *
 from utils.formatter import formatted_java_code
 
 # Java Language Server
-lsp_config = MultilspyConfig.from_dict(
-    {"code_language": "java", "trace_lsp_communication": True}
-)
+lsp_config = MultilspyConfig.from_dict({"code_language": "java", "trace_lsp_communication": True})
 lsp_logger = MultilspyLogger()
 
 model = None
-output_dir = "pipeline"
+output_dir = "pipeline_"
+
 # Langsmith setup
-# os.environ["LANGCHAIN_TRACING_V2"] = "true"
-# os.environ["LANGCHAIN_PROJECT"] = f"pipeline"
-# os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
-# os.environ["LANGCHAIN_API_KEY"] = LANGCHAIN_API_KEY
-# client = Client()
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_PROJECT"] = f"pipeline"
+os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
+os.environ["LANGCHAIN_API_KEY"] = LANGCHAIN_API_KEY
+client = Client()
 
 def gen_info(focal_diff, test_src) -> str:
     query = {
@@ -110,20 +109,24 @@ def basic_answer(prod_diff, test_src, context: str, answer_2: str) -> str:
     return res
 
 def collect_definition(info, repo_path, proj, repo, lsp: SyncLanguageServer):
-    res = []
+    locations = []
+    contents = []
     
     for func in info["method"]:
-        func_info = get_function(func, repo_path, proj, repo, lsp)
-        res.append(func_info)
+        func_loc, func = get_function(func, repo_path, proj, repo, lsp)
+        locations.append(func_loc)
+        contents.append(func)
     
     if len(info["class"]) > 5:
         info["class"] = info["class"][:5]
     for clas in info["class"]:
-        clas_info = get_class(clas, repo_path, proj, repo, lsp)
-        res.append(clas_info)
+        clas_loc, clas = get_class(clas, repo_path, proj, repo, lsp)
+        locations.append(clas_loc)
+        contents.append(clas)
 
-    res = '\n'.join(res)
-    return res
+    locations = '\n'.join(locations)
+    contents = '\n'.join(contents)
+    return locations, contents
 
 def get_diff_method(src: str, tgt: str) -> str:
     src_clean = get_code_without_comments(src)
@@ -152,7 +155,7 @@ def split_imports_and_test_code(java_code):
     return "\n".join(test_lines), "\n".join(import_lines)
 
 def main(input_file: str, output_file: str, process_continue=True):
-    # Set repo_name, repo_path, output_dir
+    # Set repo_name, repo_path, output_file
     sample_dict = read_json(os.path.join(DATA_BASE, input_file))
     repo_name = sample_dict[0]['repo_name']
     repo_path = os.path.join(REPO_BASE, repo_name)
@@ -198,23 +201,27 @@ def main(input_file: str, output_file: str, process_continue=True):
                 info_gen_ori = gen_info(focal_diff, test_src_aligned)
                 info_gen = extract_json(info_gen_ori)
                 info_gen = json.loads(info_gen)
-                logger.info(f"--- info for item {key}:{info_gen}")
-
+                logger.info(f"--- info for item {key} :\n{info_gen}")
+                # value['info'] = info_gen
                 # cllect definitions for method/class
-                context = collect_definition(info_gen, repo_path, value, update_repo, lsp)
+                locations, contents = collect_definition(info_gen, repo_path, value, update_repo, lsp)
+                # filter information
+                filtered_info = gen_filter(focal_diff, test_src_aligned, contents, info_gen_ori)
+                value['filtered_info'] = filtered_info
+                value['locations'] = locations
+                locations = f"You can reference the following paths to resolve dependencies (import needed methods/classes):\n{locations}\n"
                 # collect references
                 reference = ""
                 variables = get_varibles(value, update_repo)
                 if variables:
                     reference = "Varibles defined in test class that you can derectly use:\n"
                     reference += f"```java\n{variables}\n```\n"
-                
-                # filter information
-                filtered_info = gen_filter(focal_diff, test_src_aligned, context, info_gen_ori)
-                
-                context = filtered_info + "\n" + reference
+
+                context = filtered_info + "\n" + locations + "\n" + reference
                 logger.info(context)
 
+                # @NOTE wo_CC
+                # context = ""
                 # generate updated test method
                 test_gen = gen_test(focal_diff, test_src_aligned, context)
                 test_gen_code = extract_code(test_gen)
@@ -227,6 +234,7 @@ def main(input_file: str, output_file: str, process_continue=True):
                 value["imports_gen"] = imports_gen
                 compile_result, error_info, test_info = build_test(value)
 
+                # iterate refinement
                 for i in range(0, 2):
                     if compile_result != 0:
                         if len(test_info) > 0: #test fail
@@ -247,12 +255,12 @@ def main(input_file: str, output_file: str, process_continue=True):
                         logger.info(test_gen_code)
                         value['test_gen'] = code_gen
                         value["imports_gen"] = imports_gen
+                        value['iteration'] = i+1
 
                         compile_result, error_info, test_info = build_test(value)
 
                 os.chdir(repo_path)
                 subprocess.run(['git', 'reset', '--hard', 'HEAD'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
                 # basic answer
                 if compile_result != 0:
                     basic_code = basic_answer(focal_diff, test_src_aligned, context, test_gen)
@@ -261,6 +269,7 @@ def main(input_file: str, output_file: str, process_continue=True):
                     logger.info(basic_code)
                     value["imports_gen"] = imports_gen
                     value['test_gen'] = code_gen
+                    value['iteration'] = 3
 
                     compile_result, error_info, test_info = build_test(value)
                     os.chdir(repo_path)

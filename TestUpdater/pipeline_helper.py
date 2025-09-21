@@ -38,7 +38,7 @@ def extract_json(input_str: str):
         r"```json\n(.*?)\n```|```\n(.*?)\n```", input_str, re.DOTALL
     )
     if len(code_blocks) == 0:
-        return ""
+        return input_str
     else:
         return code_blocks[0][0] if code_blocks[0][0] != "" else code_blocks[0][1]
 
@@ -158,8 +158,7 @@ def build_test(exp):
     if module:
         cmd.extend(['-pl', f'{module}', '--also-make'])
     cmd.extend(MVN_SKIPS)
-    print(' '.join(cmd))
-
+    logger.info(' '.join(cmd))
     try:
         # mvn test
         completed_process = subprocess.run(
@@ -228,7 +227,7 @@ def get_function(name: str, repo_path, proj, repo: UpdateRepo, lsp: SyncLanguage
 
     # not found
     if name_idx == -1:
-        return ""
+        return "", ""
     # ***.***
     split_idx = name.find(".")
     if split_idx != -1:
@@ -236,17 +235,19 @@ def get_function(name: str, repo_path, proj, repo: UpdateRepo, lsp: SyncLanguage
     
     ln, cn = TextUtils.get_line_col_from_index(focal_file, method_start + name_idx)
     definition_loc = lsp.request_definition(focal_relpath, ln, cn)
-    res = ""
+    location = ""
+    content = ""
     if len(definition_loc) != 0:
         rel_path = definition_loc[0]["relativePath"]
         file_str = repo.get_file_tgt(definition_loc[0]["relativePath"])
         line = definition_loc[0]["range"]["start"]["line"]
         method_info = extract_method_from_line(file_str, line)
         if method_info:
-            res = f"Function {name} in {rel_path}: \n```java\n{method_info}\n```\n"
+            location = f"Function {name} in {rel_path}"
+            content = f"```java\n{method_info}\n```"
         else:
             logger.error(f"Error: can not find function {name}")
-    return res
+    return location, content
 
 def get_class(name: str, repo_path, proj, repo: UpdateRepo, lsp: SyncLanguageServer):
     focal_relpath = proj["changed_prod"].split('#')[0]
@@ -268,7 +269,7 @@ def get_class(name: str, repo_path, proj, repo: UpdateRepo, lsp: SyncLanguageSer
 
     # not found
     if name_idx == -1:
-        return ""
+        return "", ""
     # ***.***
     split_idx = name.find(".")
     if split_idx != -1:
@@ -276,16 +277,18 @@ def get_class(name: str, repo_path, proj, repo: UpdateRepo, lsp: SyncLanguageSer
     
     ln, cn = TextUtils.get_line_col_from_index(focal_file, method_start + name_idx)
     loc = lsp.request_definition(focal_relpath, ln, cn)
-    res = ""
+    location = ""
+    content = ""
     if len(loc) != 0:
         rel_path = loc[0]["relativePath"]
         file_str = repo.get_file_tgt(loc[0]["relativePath"])
         class_info = extract_class_from_line(file_str, loc[0]["range"]["start"]["line"])
         if class_info:
-            res = f"Class {name} in {rel_path}: \n```java\n{class_info}\n```\n"
+            location = f"Class {name} in {rel_path}."
+            content = f"```java\n{class_info}\n```"
         else:
             logger.error(f"Error: can not find class {name}")
-    return res
+    return location, content
 
 def get_varibles(proj, repo: UpdateRepo):
     test_relpath = proj["changed_test"].split('#')[0]
@@ -378,7 +381,6 @@ def parse_error(error_info: list[str], repo_path, proj, repo, lsp):
                 error_line = file_lines[ln-1].strip()
             reason = line.split()[:1] + line.split()[1:]
             reason = ' '.join(reason)
-            print(reason)
             error_prompt = f"// <ERROR> {reason}\n{error_line}"
             error_infos.append(error_prompt)
     info_need = []
@@ -389,11 +391,11 @@ def parse_error(error_info: list[str], repo_path, proj, repo, lsp):
             name = name[:name.find('(')]
             isFunc = True
         if isFunc:
-            func_info = get_function(name, repo_path, proj, repo, lsp)
-            info_need.append(func_info)
+            func_loc, func_info = get_function(name, repo_path, proj, repo, lsp)
+            info_need.append(func_loc + '\n' + func_info)
         else:
-            clas_info = get_class(name, repo_path, proj, repo, lsp)
-            info_need.append(clas_info)
+            clas_loc, clas_info = get_class(name, repo_path, proj, repo, lsp)
+            info_need.append(clas_loc + '\n' + clas_info)
     info_need = '\n'.join(info_need)
     error_infos = '\n'.join(error_infos)
     prompt = ""
